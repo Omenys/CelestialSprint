@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class MusicList : MonoBehaviour
 {
-    [SerializeField] public AudioSource[] musicList;
+    public List<AudioClip> musicList = new List<AudioClip>();
 }

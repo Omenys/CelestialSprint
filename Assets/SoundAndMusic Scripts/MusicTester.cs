@@ -4,42 +4,63 @@ using UnityEngine;
 
 public class MusicTester : MonoBehaviour
 {
-    AudioSource[] BGMList;
-    int index = 0;
+    static List<AudioClip> BGMList;
+    static AudioSource currentBGM;
+    static float musicVolume = 0.5f;
+    int index = -1;
 
     // Start is called before the first frame update
     void Start()
     {
         BGMList = FindObjectOfType<MusicList>().musicList;
+        currentBGM = GetComponent<AudioSource>(); // Connecting the Empty Audio Source object here.
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (index < BGMList.Length - 1 && !BGMList[index].isPlaying)
+            switch (index)
             {
-                BGMList[index].Play();
+                case 0:
+                    playMusic("main music");
+                    break;
+                case 1:
+                    playMusic("game over");
+                    break;
+                case 2:
+                    playMusic("victory");
+                    break;
+                case 3:
+                    playMusic("credits");
+                    break;
+                default:
+                    break;
             }
-            else if (index < BGMList.Length - 1 && BGMList[index].isPlaying)
-            {
-                BGMList[index].Stop();
-                index++;
-                BGMList[index].Play();
-            }
-            else
-            {
-                BGMList[index].Stop();
+            if(index == 3)
                 index = 0;
-                BGMList[index].Play();
+            else
+                index++;
+        }
+    }
+
+    public static void playMusic(string name)
+    {
+        foreach (AudioClip music in BGMList)
+        {
+            if (music.name == name)
+            {
+                if (currentBGM.isPlaying)
+                    currentBGM.Stop();
+                currentBGM.volume = musicVolume;
+                currentBGM.clip = music;
+                currentBGM.Play();
+                return;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Minus))
-            BGMList[index].volume -= 0.01f;
-
-        if (Input.GetKeyDown(KeyCode.Equals))
-            BGMList[index].volume += 0.01f;
+        //If the foreach loop fails then...
+        Debug.Log("Couldn't find a Music named: \"" + name + "\"");
     }
 }
