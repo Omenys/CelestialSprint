@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundTest : MonoBehaviour
+public class MusicTester : MonoBehaviour
 {
     AudioSource[] BGMList;
     int index = 0;
@@ -10,13 +10,13 @@ public class SoundTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BGMList = FindObjectOfType<MusicManager>().musicList;
+        BGMList = FindObjectOfType<MusicList>().musicList;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (index < BGMList.Length - 1 && !BGMList[index].isPlaying)
             {
@@ -36,7 +36,7 @@ public class SoundTest : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Minus))
+        if (Input.GetKeyDown(KeyCode.Minus))
             BGMList[index].volume -= 0.01f;
 
         if (Input.GetKeyDown(KeyCode.Equals))
