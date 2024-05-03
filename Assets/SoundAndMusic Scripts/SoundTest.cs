@@ -36,9 +36,10 @@ public class SoundTest : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-            BGMList[index].volume = 0;
-        }
+        if(Input.GetKeyDown(KeyCode.Minus))
+            BGMList[index].volume -= 0.01f;
+
+        if (Input.GetKeyDown(KeyCode.Equals))
+            BGMList[index].volume += 0.01f;
     }
 }
