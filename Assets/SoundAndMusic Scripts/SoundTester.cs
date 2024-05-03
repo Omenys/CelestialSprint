@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class SoundTester : MonoBehaviour
 {
-
     static List<AudioSource> SFXList;
     static float sfxVolume = 0.5f;
+    float volumeAdjustMultiplier = 1;
     int index = 0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,12 @@ public class SoundTester : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        foreach (AudioSource sfx in SFXList)
+        {
+            sfx.volume = sfxVolume;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) // Music player tester
         {
             switch(index)
             {
@@ -50,30 +54,44 @@ public class SoundTester : MonoBehaviour
                 default:
                     break;
             }
-        }
-
-        if(Input.GetKeyDown(KeyCode.RightShift))
-        {
             if (index == 7)
                 index = 0;
             else
                 index++;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-            sfxVolume -= 0.01f;
+        // Used to control the SFX volume. Will be implemented in the new input system in a future.
+        if (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.RightBracket))
+            volumeAdjustMultiplier = 1;
+    }
 
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-            sfxVolume += 0.01f;
+    private void FixedUpdate() // Updates 50 times a second
+    {
+        // Used to control the SFX volume. Will be implemented in the new input system in a future.
+        if (Input.GetKey(KeyCode.LeftBracket))
+        {
+            sfxVolume -= 0.001f * volumeAdjustMultiplier;
+            if (sfxVolume > 0.99)
+                sfxVolume -= 0.015f;
+            if (volumeAdjustMultiplier < 4.5f)
+                volumeAdjustMultiplier += 0.02f;
+        }
+        if (Input.GetKey(KeyCode.RightBracket))
+        {
+            sfxVolume += 0.001f * volumeAdjustMultiplier;
+            if (sfxVolume < 0.01)
+                sfxVolume += 0.015f;
+            if (volumeAdjustMultiplier < 4.5f)
+                volumeAdjustMultiplier += 0.02f;
+        }
     }
 
     public static void playSound(string name)
     {
         foreach (AudioSource sfx in SFXList)
         {
-            if(sfx.name == name)
+            if (sfx.name == name)
             {
-                sfx.volume = sfxVolume;
                 sfx.Play();
                 return;
             }
@@ -81,4 +99,6 @@ public class SoundTester : MonoBehaviour
         //If the foreach loop fails then...
         Debug.Log("Couldn't find a SFX named: \"" + name + "\"");
     }
+
+
 }

@@ -24,7 +24,7 @@ public class MusicTester : MonoBehaviour
     {
         currentBGM.volume = musicVolume;
 
-        if (Input.GetKeyDown(KeyCode.Return)) // Music Sound tester
+        if (Input.GetKeyDown(KeyCode.Return)) // Music player tester
         {
             switch (index)
             {
@@ -53,7 +53,6 @@ public class MusicTester : MonoBehaviour
         // Used to control the music volume. Will be implemented in the new input system in a future.
         if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
             volumeAdjustMultiplier = 1;
-
     }
 
     private void FixedUpdate() // Updates 50 times a second
