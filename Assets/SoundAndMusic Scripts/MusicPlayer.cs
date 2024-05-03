@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MusicTester : MonoBehaviour
+public class MusicPlayer : MonoBehaviour
 {
     static List<AudioClip> BGMList;
     static AudioSource currentBGM;

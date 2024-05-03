@@ -21,8 +21,8 @@ public class test : MonoBehaviour
     {
         if (tick == 5)
         {
-            MusicTester.playMusic("main music");
-            SoundTester.playSound("Sound");
+            //MusicPlayer.playMusic("main music");
+            //SoundPlayer.playSound("Sound");
             enabled = false;
         }
         else

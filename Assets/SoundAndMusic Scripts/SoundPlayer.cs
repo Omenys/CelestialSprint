@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundTester : MonoBehaviour
+public class SoundPlayer : MonoBehaviour
 {
     static List<AudioSource> SFXList;
     static float sfxVolume = 0.5f;
@@ -71,7 +71,7 @@ public class SoundTester : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftBracket))
         {
             sfxVolume -= 0.001f * volumeAdjustMultiplier;
-            if (sfxVolume > 0.99)
+            if (sfxVolume > 0.99f)
                 sfxVolume -= 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
                 volumeAdjustMultiplier += 0.02f;
@@ -79,7 +79,7 @@ public class SoundTester : MonoBehaviour
         if (Input.GetKey(KeyCode.RightBracket))
         {
             sfxVolume += 0.001f * volumeAdjustMultiplier;
-            if (sfxVolume < 0.01)
+            if (sfxVolume < 0.01f)
                 sfxVolume += 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
                 volumeAdjustMultiplier += 0.02f;
