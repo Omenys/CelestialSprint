@@ -5,10 +5,20 @@ using UnityEngine;
 public class Hazard : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat stat; //accessing scriptable
+    public float maxSpeed; //asteroid move speed
+    public float maxSpin; //asteroid spinning effect
+    public Rigidbody2D rb; //rigidbody of asteroid prefab
 
-    Vector2 movement() //Asteroid movement
+    Vector2 movement() //Asteroid movement and spin effect
     {
-        return 0; //placeholder
+        Vector2 move = new Vector2(Random.Range(-maxSpeed, maxSpeed), Random.Range(-maxSpeed, maxSpeed)); //speed
+
+        float spin = Random.Range(-maxSpin, maxSpin); //spin
+
+        rb.AddForce(move);
+        rb.AddTorque(spin);
+
+        return move;
     }
     void Spawning(string portalName, int speed) //Asteroid spawning
     {
