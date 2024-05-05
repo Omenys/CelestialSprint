@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 28107030}
   - component: {fileID: 28107032}
   - component: {fileID: 28107031}
+  - component: {fileID: 28107033}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 28107029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.78, y: -0, z: 0}
+  m_LocalPosition: {x: -8.3, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,7 +172,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -235,6 +236,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &28107033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28107029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8633d98afa2eb448467360d7eedb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6.5
 --- !u!1 &1191664177
 GameObject:
   m_ObjectHideFlags: 0
