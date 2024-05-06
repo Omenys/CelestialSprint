@@ -9,7 +9,16 @@ public class Hazard : MonoBehaviour
     public float maxSpin; //asteroid spinning effect
     public Rigidbody2D rb; //rigidbody of asteroid prefab
 
-    Vector2 movement() //Asteroid movement and spin effect
+    private void Start()
+    {
+        Vector2 move = new Vector2(Random.Range(-maxSpeed, maxSpeed), Random.Range(-maxSpeed, maxSpeed)); //speed
+
+        float spin = Random.Range(-maxSpin, maxSpin); //spin
+
+        rb.AddForce(move);
+        rb.AddTorque(spin);
+    }
+   /* Vector2 movement() //Asteroid movement and spin effect
     {
         Vector2 move = new Vector2(Random.Range(-maxSpeed, maxSpeed), Random.Range(-maxSpeed, maxSpeed)); //speed
 
@@ -19,7 +28,7 @@ public class Hazard : MonoBehaviour
         rb.AddTorque(spin);
 
         return move;
-    }
+    }*/
     void Spawning(string portalName, int speed) //Asteroid spawning
     {
 
