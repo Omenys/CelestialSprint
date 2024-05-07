@@ -29,5 +29,6 @@ public class Movement : MonoBehaviour
     {
         // Move rigid body
         rb.velocity = new Vector2(0, direction.y * speed);
+
     }
 }
