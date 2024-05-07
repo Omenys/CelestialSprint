@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2464640465454206153}
   - component: {fileID: 3086026466966347698}
   - component: {fileID: 2415993449078362112}
-  - component: {fileID: 8880671045150207385}
+  - component: {fileID: 2303770286244942980}
   m_Layer: 0
   m_Name: spaceMeteors_001
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.075
---- !u!114 &8880671045150207385
+--- !u!114 &2303770286244942980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,3 +164,7 @@ MonoBehaviour:
   maxSpeed: 100
   maxSpin: 100
   rb: {fileID: 3086026466966347698}
+  screenTop: 7
+  screenBottom: -7
+  screenLeft: -10
+  screenRight: 10
