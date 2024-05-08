@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acac699b24ba1f445b3e3c80a7875a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 100
-  maxSpin: 100
+  maxSpeed: 150
+  maxSpin: 150
   rb: {fileID: 3086026466966347698}
   screenTop: 7
   screenBottom: -7
