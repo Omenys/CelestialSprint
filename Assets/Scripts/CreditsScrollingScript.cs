@@ -9,6 +9,7 @@ public class CreditsScrollingScript : MonoBehaviour
     [SerializeField] float speed;
 
     // Section 1 stuff
+    [SerializeField] GameObject sectionOneParent;
     [SerializeField] TMP_Text sOneTitle;
     [SerializeField] TMP_Text sOneLeftColumn;
     [SerializeField] TMP_Text sOneRightColumn;
@@ -17,6 +18,7 @@ public class CreditsScrollingScript : MonoBehaviour
     bool sOne;
 
     // Section 2 stuff
+    [SerializeField] GameObject sectionTwoParent;
     [SerializeField] TMP_Text sTwoTitle;
     [SerializeField] TMP_Text sTwoLeftColumn;
     [SerializeField] TMP_Text sTwoRightColumn;
@@ -40,14 +42,14 @@ public class CreditsScrollingScript : MonoBehaviour
     {
         if(sOne)
             sectionOne();
-        else if (sTwo)
+        if (sTwo)
             sectionTwo();
 
     }
 
     void resetCredits()
     {
-        toggleSection(true, sOneTitle, sOneLeftColumn, sOneRightColumn);
+        toggleSection(true, sectionOneParent);
         sOneTitle.transform.localPosition = new Vector2(0, -695);
         sOneLeftColumn.transform.localPosition = new Vector2(-490, -1533);
         sOneRightColumn.transform.localPosition = new Vector2(515, -1533);
@@ -56,23 +58,19 @@ public class CreditsScrollingScript : MonoBehaviour
         sTwoTitle.transform.localPosition = new Vector2(0, -695);
         sTwoLeftColumn.transform.localPosition = new Vector2(-597.01f, -1139.7f);
         sTwoRightColumn.transform.localPosition = new Vector2(582, -1139.7f);
-        toggleSection(false, sTwoTitle, sTwoLeftColumn, sTwoRightColumn);
+        toggleSection(false, sectionTwoParent);
         sTwo = false;
     }
 
-    void toggleSection(bool enable, TMP_Text title, TMP_Text leftC, TMP_Text rightC)
+    void toggleSection(bool enable, GameObject section)
     {
         if(enable)
         {
-            title.gameObject.SetActive(true);
-            leftC.gameObject.SetActive(true);
-            rightC.gameObject.SetActive(true);
+            section.SetActive(true);
         }
         else if(!enable)
         {
-            title.gameObject.SetActive(false);
-            leftC.gameObject.SetActive(false);
-            rightC.gameObject.SetActive(false);
+            section.SetActive(false);
         }
     }
 
@@ -89,12 +87,15 @@ public class CreditsScrollingScript : MonoBehaviour
             sOneLeftColumn.transform.localPosition = new Vector2(-490, sOneColY);
             sOneRightColumn.transform.localPosition = new Vector2(515, sOneColY);
         }
+        if(sOneColY > 115)
+        {
+            toggleSection(true, sectionTwoParent);
+            sTwo = true;
+        }
         if(sOneTitleY >= 600 && sOneColY >= 1200)
         {
-            toggleSection(false, sOneTitle, sOneLeftColumn, sOneRightColumn);
+            toggleSection(false, sectionOneParent);
             sOne = false;
-            toggleSection(true, sTwoTitle, sTwoLeftColumn, sTwoRightColumn);
-            sTwo = true;
         }
     }
 
@@ -113,7 +114,7 @@ public class CreditsScrollingScript : MonoBehaviour
         }
         if(sTwoTitleY >= 600 && sTwoColY >= 1900)
         {
-            toggleSection(false, sTwoTitle, sTwoLeftColumn, sTwoRightColumn);
+            toggleSection(false, sectionTwoParent);
             sTwo = false;
         }
     }    
