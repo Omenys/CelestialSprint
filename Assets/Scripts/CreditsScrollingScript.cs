@@ -26,15 +26,20 @@ public class CreditsScrollingScript : MonoBehaviour
     float sTwoColY;
     bool sTwo;
 
+    // Section 3 stuff
+    [SerializeField] GameObject sectionThreeParent;
+    [SerializeField] TMP_Text sThreeTitle;
+    [SerializeField] TMP_Text sThreeLeftColumn;
+    [SerializeField] TMP_Text sThreeRightColumn;
+    float sThreeTitleY;
+    float sThreeColY;
+    bool sThree;
+
 
     // Start is called before the first frame update
     void Start()
     {
         resetCredits();
-        sOneTitleY = sOneTitle.transform.localPosition.y;
-        sOneColY = sOneLeftColumn.transform.localPosition.y;
-        sTwoTitleY = sTwoTitle.transform.localPosition.y;
-        sTwoColY = sTwoLeftColumn.transform.localPosition.y;
     }
 
     // Update is called once per frame
@@ -44,25 +49,43 @@ public class CreditsScrollingScript : MonoBehaviour
             sectionOne();
         if (sTwo)
             sectionTwo();
+        if (sThree)
+            sectionThree();
+
 
     }
 
     void resetCredits()
     {
-        toggleSection(true, sectionOneParent);
+        // Section 1
+        toggleSection(sectionOneParent, true);
+        sOneTitleY = sOneTitle.transform.localPosition.y;
+        sOneColY = sOneLeftColumn.transform.localPosition.y;
         sOneTitle.transform.localPosition = new Vector2(0, -695);
         sOneLeftColumn.transform.localPosition = new Vector2(-490, -1533);
         sOneRightColumn.transform.localPosition = new Vector2(515, -1533);
         sOne = true;
 
+        // Section 2
+        sTwoTitleY = sTwoTitle.transform.localPosition.y;
+        sTwoColY = sTwoLeftColumn.transform.localPosition.y;
         sTwoTitle.transform.localPosition = new Vector2(0, -695);
         sTwoLeftColumn.transform.localPosition = new Vector2(-597.01f, -1139.7f);
         sTwoRightColumn.transform.localPosition = new Vector2(582, -1139.7f);
-        toggleSection(false, sectionTwoParent);
+        toggleSection(sectionTwoParent, false);
         sTwo = false;
+
+        // Section 3
+        sThreeTitleY = sThreeTitle.transform.localPosition.y;
+        sThreeColY = sThreeLeftColumn.transform.localPosition.y;
+        sThreeTitle.transform.localPosition = new Vector2(0, -695);
+        sThreeLeftColumn.transform.localPosition = new Vector2(-597.01f, -882.35f);
+        sThreeRightColumn.transform.localPosition = new Vector2(621.446f, -882.35f);
+        toggleSection(sectionThreeParent, false);
+        sThree = false;
     }
 
-    void toggleSection(bool enable, GameObject section)
+    void toggleSection(GameObject section, bool enable)
     {
         if(enable)
         {
@@ -79,7 +102,7 @@ public class CreditsScrollingScript : MonoBehaviour
         if (sOneTitleY < 600)
         {
             sOneTitleY += speed * Time.deltaTime;
-            sOneTitle.transform.localPosition = new Vector3(0, sOneTitleY);
+            sOneTitle.transform.localPosition = new Vector2(0, sOneTitleY);
         }
         if (sOneColY < 1200)
         {
@@ -89,12 +112,12 @@ public class CreditsScrollingScript : MonoBehaviour
         }
         if(sOneColY > 115)
         {
-            toggleSection(true, sectionTwoParent);
+            toggleSection(sectionTwoParent, true);
             sTwo = true;
         }
-        if(sOneTitleY >= 600 && sOneColY >= 1200)
+        if(sOneColY >= 1200)
         {
-            toggleSection(false, sectionOneParent);
+            toggleSection(sectionOneParent, false);
             sOne = false;
         }
     }
@@ -104,18 +127,42 @@ public class CreditsScrollingScript : MonoBehaviour
         if(sTwoTitleY < 600)
         {
             sTwoTitleY += speed * Time.deltaTime;
-            sTwoTitle.transform.localPosition = new Vector3(0, sTwoTitleY);
+            sTwoTitle.transform.localPosition = new Vector2(0, sTwoTitleY);
         }
         if(sTwoColY < 1900)
         {
             sTwoColY += speed * Time.deltaTime;
-            sTwoLeftColumn.transform.localPosition = new Vector3(-597.01f, sTwoColY);
-            sTwoRightColumn.transform.localPosition = new Vector3(582, sTwoColY);
+            sTwoLeftColumn.transform.localPosition = new Vector2(-597.01f, sTwoColY);
+            sTwoRightColumn.transform.localPosition = new Vector2(582, sTwoColY);
         }
-        if(sTwoTitleY >= 600 && sTwoColY >= 1900)
+        if(sTwoColY > 925)
         {
-            toggleSection(false, sectionTwoParent);
+            toggleSection(sectionThreeParent, true);
+            sThree = true;
+        }
+        if(sTwoColY >= 1900)
+        {
+            toggleSection(sectionTwoParent, false);
             sTwo = false;
         }
-    }    
+    }
+
+    void sectionThree() // The art!
+    {
+        if(sThreeTitleY < 600)
+        {
+            sThreeTitleY += speed * Time.deltaTime;
+            sThreeTitle.transform.localPosition = new Vector2(0, sThreeTitleY);
+        }
+        if(sThreeColY < 700)
+        {
+            sThreeColY += speed * Time.deltaTime;
+            sThreeLeftColumn.transform.localPosition = new Vector2(-597.01f, sThreeColY);
+            sThreeRightColumn.transform.localPosition = new Vector2(621.446f, sThreeColY);
+        }
+        if(sThreeColY >= 700)
+        {
+            resetCredits();
+        }
+    }
 }
