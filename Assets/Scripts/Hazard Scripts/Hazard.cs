@@ -47,9 +47,12 @@ public class Hazard : MonoBehaviour
         transform.position = newPos;
    
     }
-    private void OnCollisionEnter(Collision collision) //When player collides with asteroid
+    public void OnTriggerEnter2D(Collider2D other) //When player collides with asteroid
     {
-        stat.currentShieldCount -= 1;
+        if (other.gameObject.GetComponent<Movement>() != null)
+        {
+            stat.currentShieldCount -= 1;
+        }
     }
 
     void asteroidWall() //Spawns when a player does not enter a portal

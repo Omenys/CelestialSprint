@@ -6,7 +6,7 @@ using UnityEngine;
 public class HazardSpawner : MonoBehaviour
 {
     [SerializeField] GameObject asteroid; //placing asteroid prefab
-    [SerializeField] float spawnDelay; //adjustable spawn delay
+    public float spawnDelay; //adjustable spawn delay
     float spawnTime;
     // Start is called before the first frame update
     void Start()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3086026466966347698}
   - component: {fileID: 2415993449078362112}
   - component: {fileID: 2303770286244942980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaceMeteors_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
