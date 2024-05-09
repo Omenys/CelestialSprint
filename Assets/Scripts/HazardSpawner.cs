@@ -29,7 +29,7 @@ public class HazardSpawner : MonoBehaviour
     private void Spawn() //spawns hazard  within a random set range
     {
         GameObject obj = Instantiate(asteroid, transform);
-        int rand = Random.Range(-25, 25); //the range in which the hazards will spawn within
+        int rand = Random.Range(-20, -25); //the range in which the hazards will spawn within
         obj.transform.position = new Vector2(rand, rand);
         Destroy(obj.gameObject, 20); //destroys object after 20 seconds
     }
