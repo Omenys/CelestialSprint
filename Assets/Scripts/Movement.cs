@@ -4,6 +4,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat shield;
+    [SerializeField] PortalEntered entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;
@@ -14,6 +15,7 @@ public class Movement : MonoBehaviour
         // Get rigid body component
         rb = GetComponent<Rigidbody2D>();
         shield.currentShieldCount = shield.maxShieldCount;
+        entered.portalsEntered = 0;
     }
 
     // Update is called once per frame
