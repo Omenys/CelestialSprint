@@ -54,9 +54,4 @@ public class Hazard : MonoBehaviour
             stat.currentShieldCount -= 1;
         }
     }
-
-    void asteroidWall() //Spawns when a player does not enter a portal
-    {
-
-    }
 }
