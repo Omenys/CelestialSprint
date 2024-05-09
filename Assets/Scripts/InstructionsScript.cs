@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InstructionsScript : MonoBehaviour
 {
@@ -108,5 +109,11 @@ public class InstructionsScript : MonoBehaviour
             index++;
         else
             index = 0;
+    }
+
+    public void UnloadRulesUI()
+    {
+        UIHandler.isOnRules = false;
+        SceneManager.UnloadSceneAsync("Rules UI");
     }
 }

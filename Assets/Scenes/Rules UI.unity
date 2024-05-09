@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 491923914}
   - component: {fileID: 491923913}
   m_Layer: 5
-  m_Name: Back Button
+  m_Name: Got It Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,10 +456,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.8124731, b: 0.2588235, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.8117648, b: 0.25882354, a: 1}
-    m_PressedColor: {r: 1, g: 0.96264637, b: 0.2588235, a: 1}
-    m_SelectedColor: {r: 1, g: 0.8117648, b: 0.25882354, a: 1}
+    m_NormalColor: {r: 1, g: 0.9752276, b: 0.2588235, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.97647065, b: 0.25882354, a: 1}
+    m_PressedColor: {r: 1, g: 0.8825042, b: 0.2588235, a: 1}
+    m_SelectedColor: {r: 1, g: 0.97647065, b: 0.25882354, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -479,9 +479,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OptionsUIScript, Assembly-CSharp
-        m_MethodName: UnloadOptionsUI
+      - m_Target: {fileID: 1384472442}
+        m_TargetAssemblyTypeName: InstructionsScript, Assembly-CSharp
+        m_MethodName: UnloadRulesUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

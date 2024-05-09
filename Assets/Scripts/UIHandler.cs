@@ -52,7 +52,7 @@ public class UIHandler : MonoBehaviour
         }
         else
         {
-            //showAll();
+            showAll();
         }
     }
 
