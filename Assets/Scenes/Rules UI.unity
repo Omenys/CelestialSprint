@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.26548594, g: 0.291808, b: 0.3584906, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -456,10 +456,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.6010949, b: 0.25943398, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.6, b: 0.25882354, a: 1}
-    m_PressedColor: {r: 0.990566, g: 0.4786697, b: 0.042052314, a: 1}
-    m_SelectedColor: {r: 1, g: 0.6, b: 0.25882354, a: 1}
+    m_NormalColor: {r: 1, g: 0.8124731, b: 0.2588235, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.8117648, b: 0.25882354, a: 1}
+    m_PressedColor: {r: 1, g: 0.96264637, b: 0.2588235, a: 1}
+    m_SelectedColor: {r: 1, g: 0.8117648, b: 0.25882354, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DONE
+  m_text: GOT IT!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
@@ -1321,8 +1321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.61387, y: -29.049797}
-  m_SizeDelta: {x: 1394.6, y: 333.33}
+  m_AnchoredPosition: {x: -96.26408, y: -27.950714}
+  m_SizeDelta: {x: 1392.2394, y: 361.6561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648850134
 MonoBehaviour:
@@ -1344,10 +1344,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your goal is to travel through space on a ship moving through portals
-    to arrive your desired planet
-
-'
+  m_text: Your goal is to travel space on a ship moving through portals to arrive
+    your destination planet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
@@ -1356,8 +1354,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292897839
-  m_fontColor: {r: 0.1843137, g: 0.42524576, b: 0.8784314, a: 1}
+    rgba: 4287684655
+  m_fontColor: {r: 0.1843137, g: 0.8784314, b: 0.5663072, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1374,12 +1372,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 80.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 90
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
