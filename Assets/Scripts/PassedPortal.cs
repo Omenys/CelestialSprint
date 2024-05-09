@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PassedPortal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //HazardSpawner spawner; //accessing spawner script
+    [SerializeField] GameObject obj; //gameobject that will use this script
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        //spawner.spawnDelay = 3; //spanws asteroid every 3 seconds
     }
 }
