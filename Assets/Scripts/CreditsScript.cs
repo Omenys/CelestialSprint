@@ -20,7 +20,7 @@ public class CreditsScript : MonoBehaviour
 
     public void loadCredits()
     {
-        // Credits scene goes here
+        SceneManager.LoadSceneAsync("Credits UI", LoadSceneMode.Additive);
         UIHandler.isOnCredits = true;
     }
 }

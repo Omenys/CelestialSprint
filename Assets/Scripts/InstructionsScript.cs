@@ -33,7 +33,7 @@ public class InstructionsScript : MonoBehaviour
                 break;
             case 1:
                 instructionsText.color = new Color(0.1862318f, 0.8773585f, 0.7152424f, 1);
-                instructionsText.text = "You have to go through 20 portals to win";
+                instructionsText.text = "You have to go through 10 portals to win";
                 break;
             case 2:
                 instructionsText.color = new Color(0.1843137f, 0.8340974f, 0.8784314f, 1);
@@ -85,13 +85,12 @@ public class InstructionsScript : MonoBehaviour
                 break;
             case 14:
                 instructionsText.color = new Color(0.8784314f, 0.6738171f, 0.1843137f, 1);
-                instructionsText.text = "It only lasts 5 minutes! Gotta go fast!";
+                instructionsText.text = "It only lasts 150 seconds! Gotta go fast!";
                 break;
             case 15:
                 instructionsText.color = new Color(0.8784314f, 0.8212512f, 0.1843137f, 1);
                 instructionsText.text = "Obvioustly running out of fuel will cause a game over";
                 break;
-
         }
     }
 
