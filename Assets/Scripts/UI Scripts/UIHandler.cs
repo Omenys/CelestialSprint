@@ -18,11 +18,12 @@ public class UIHandler : MonoBehaviour
     public static bool isOnCredits = false;
     public static bool isOnOptions = false;
     public static bool isOnRules = false;
+    public static bool playMainMusicOnLoop = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MusicPlayer.playMusic("main music");
     }
 
     // Update is called once per frame
@@ -53,6 +54,11 @@ public class UIHandler : MonoBehaviour
         else
         {
             showAll();
+            if (playMainMusicOnLoop)
+            {
+                playMainMusic();
+                playMainMusicOnLoop = false;
+            }
         }
     }
 
@@ -72,5 +78,10 @@ public class UIHandler : MonoBehaviour
         creditsButton.gameObject.SetActive(false);
         optionsButton.gameObject.SetActive(false);
         rulesButton.gameObject.SetActive(false);
+    }
+
+    void playMainMusic()
+    {
+        MusicPlayer.playMusic("main music");
     }
 }

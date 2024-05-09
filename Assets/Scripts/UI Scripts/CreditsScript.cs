@@ -22,5 +22,6 @@ public class CreditsScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Credits UI", LoadSceneMode.Additive);
         UIHandler.isOnCredits = true;
+        MusicPlayer.playMusic("credits");
     }
 }

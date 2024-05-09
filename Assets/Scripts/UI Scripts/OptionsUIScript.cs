@@ -10,11 +10,14 @@ public class OptionsUIScript : MonoBehaviour
 
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
+    float tempMusicVol;
+    float tempSFXVol;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        musicSlider.value = MusicPlayer.musicVolume;
+        SFXSlider.value = SoundPlayer.sfxVolume;
     }
 
     // Update is called once per frame
@@ -22,7 +25,13 @@ public class OptionsUIScript : MonoBehaviour
     {
         // Here goes the audio serialization, do this when this is merged into the main branch.
 
+        tempMusicVol = MusicPlayer.musicVolume;
+        tempSFXVol= SoundPlayer.sfxVolume;
 
+        if(musicSlider.value != tempMusicVol)
+            MusicPlayer.musicVolume = musicSlider.value;
+        if(SFXSlider.value != tempSFXVol)
+            SoundPlayer.sfxVolume = SFXSlider.value;
     }
 
     public void UnloadOptionsUI()

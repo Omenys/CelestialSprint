@@ -7,7 +7,7 @@ public class MusicPlayer : MonoBehaviour
 {
     static List<AudioClip> BGMList;
     static AudioSource currentBGM;
-    static float musicVolume = 0.5f;
+    public static float musicVolume = 0.5f;
     float volumeAdjustMultiplier = 1;
     int index = 0;
     

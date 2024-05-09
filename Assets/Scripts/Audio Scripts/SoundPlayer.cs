@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundPlayer : MonoBehaviour
 {
     static List<AudioSource> SFXList;
-    static float sfxVolume = 0.5f;
+    public static float sfxVolume = 0.5f;
     float volumeAdjustMultiplier = 1;
     int index = 0;
 

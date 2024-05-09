@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class CreditsScrollingScript : MonoBehaviour
 {
@@ -51,8 +52,12 @@ public class CreditsScrollingScript : MonoBehaviour
             sectionTwo();
         if (sThree)
             sectionThree();
-
-
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            MusicPlayer.playMusic("main music");
+            UIHandler.isOnCredits = false;
+            SceneManager.UnloadSceneAsync("Credits UI");
+        }
     }
 
     void resetCredits()

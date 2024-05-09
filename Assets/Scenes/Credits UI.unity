@@ -491,16 +491,13 @@ MonoBehaviour:
   m_text: 'Raven Daigle
 
 
-
     Raven Daigle
 
 
     Raven Daigle
-
 
 
     Omar Morales
-
 
 
     Omar
@@ -520,11 +517,7 @@ MonoBehaviour:
     Roeder
 
 
-    Aaron Roeder
-
-
-
-'
+    Aaron Roeder'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
@@ -988,7 +981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &971204296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1307,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f029c7d75834b2441bd7b0a1fb2d70cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 115
+  speed: 150
   sectionOneParent: {fileID: 971204295}
   sOneTitle: {fileID: 1024293736}
   sOneLeftColumn: {fileID: 710133983}
