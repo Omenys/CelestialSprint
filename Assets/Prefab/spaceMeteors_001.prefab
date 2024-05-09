@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acac699b24ba1f445b3e3c80a7875a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 11400000, guid: cdcd4568be9e8e64bb76ba6b35d0705e, type: 2}
   maxSpeed: 200
   maxSpin: 150
   rb: {fileID: 3086026466966347698}

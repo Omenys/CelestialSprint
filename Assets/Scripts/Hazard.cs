@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    //[SerializeField] ShieldChargeStat stat; //accessing scriptable
+    [SerializeField] ShieldChargeStat stat; //accessing scriptable
     public float maxSpeed; //asteroid move speed
     public float maxSpin; //asteroid spinning effect
     public Rigidbody2D rb; //rigidbody of asteroid prefab
@@ -49,7 +49,7 @@ public class Hazard : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision) //When player collides with asteroid
     {
-        //stat.currentShieldCount -= 1;
+        stat.currentShieldCount -= 1;
     }
 
     void asteroidWall() //Spawns when a player does not enter a portal
