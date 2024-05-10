@@ -1106,8 +1106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 14.7724, y: -161.9623}
-  m_SizeDelta: {x: 1834.7964, y: 168.1781}
+  m_AnchoredPosition: {x: 0.0000097752, y: -147}
+  m_SizeDelta: {x: 1768.6345, y: 103.9974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998340174
 MonoBehaviour:
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 2
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1219,9 +1219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTitleText: {fileID: 998340174}
-  rotZ: 0.023
-  tiltAnimTime: 70
-  animScale: 0.0005
+  rotZ: 0.125
+  tiltAnimTime: 55
+  animScale: 0.00125
   scalingAnimTime: 25
   colorOne: {r: 0.5518868, g: 0.6183651, b: 1, a: 1}
   colorTwo: {r: 0.45686492, g: 0.27020293, b: 0.8301887, a: 1}

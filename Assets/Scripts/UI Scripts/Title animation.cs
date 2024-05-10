@@ -33,20 +33,15 @@ public class Titleanimation : MonoBehaviour
         currentColor = colorOne;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        GameTitleText.transform.eulerAngles = new Vector3 (GameTitleText.transform.eulerAngles.x, GameTitleText.transform.eulerAngles.y, GameTitleText.transform.eulerAngles.z + rotZ);
-        GameTitleText.transform.localScale = new Vector3(GameTitleText.transform.localScale.x + animScale, GameTitleText.transform.localScale.y + animScale, 0);
-        GameTitleText.color = currentColor;
-        ColorChange();
-    }
-
     // Updates 50 times per second
     void FixedUpdate() // The whole title animation
     {
+        GameTitleText.transform.eulerAngles = new Vector3(GameTitleText.transform.eulerAngles.x, GameTitleText.transform.eulerAngles.y, GameTitleText.transform.eulerAngles.z + rotZ);
+        GameTitleText.transform.localScale = new Vector3(GameTitleText.transform.localScale.x + animScale, GameTitleText.transform.localScale.y + animScale, 0);
+        GameTitleText.color = currentColor;
         Tilting();
         Scaling();
+        ColorChange();
     }
 
     void Tilting()
