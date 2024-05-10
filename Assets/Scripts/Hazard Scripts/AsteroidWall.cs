@@ -6,11 +6,12 @@ public class AsteroidWall : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat stat; //accessing scriptable
     public Rigidbody2D rb; //rigidbody of asteroid prefab
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 move = new Vector2(-17, 2).normalized; //speed
+        Vector2 move = new Vector2(-speed, -1); //speed at which will drop from above
 
         rb.AddForce(move);
 
