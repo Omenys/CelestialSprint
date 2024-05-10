@@ -34,7 +34,5 @@ public class PassedPortal : MonoBehaviour
         GameObject gameObject = Instantiate(obj, transform);
 
         gameObject.transform.position = new Vector2(-4, 11);
-
-        Destroy(obj.gameObject, 7); //destroys object after 7 seconds
     }
 }
