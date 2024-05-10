@@ -680,6 +680,7 @@ MonoBehaviour:
   fuelDurationInSeconds: 30
   fuelBar: {fileID: 438970938}
   fuelBackground: {fileID: 1438363710}
+  shakingPower: 1.75
 --- !u!1 &2138618623
 GameObject:
   m_ObjectHideFlags: 0
