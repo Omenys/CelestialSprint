@@ -319,8 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311f9d053d27c9042aa3cfc3eb003a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalsAmountToWin: 1
+  portalsAmountToWin: 10
   progressBar: {fileID: 1340283118}
+  greenPortal: 0
 --- !u!1 &1139245535
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +519,7 @@ GameObject:
   - component: {fileID: 1226509291}
   - component: {fileID: 1226509290}
   - component: {fileID: 1226509292}
+  - component: {fileID: 1226509293}
   m_Layer: 5
   m_Name: Shield Bar
   m_TagString: Untagged
@@ -608,6 +610,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &1226509293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226509288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f334898b42cb3ca4c8c69b605680f4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: {fileID: 11400000, guid: cdcd4568be9e8e64bb76ba6b35d0705e, type: 2}
+  shieldIcons:
+  - {fileID: 2138618623}
+  - {fileID: 1770505207}
+  - {fileID: 1139245535}
 --- !u!1 &1340283116
 GameObject:
   m_ObjectHideFlags: 0
