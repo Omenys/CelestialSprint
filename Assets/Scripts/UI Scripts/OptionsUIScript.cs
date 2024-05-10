@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class OptionsUIScript : MonoBehaviour
 {
@@ -9,40 +10,41 @@ public class OptionsUIScript : MonoBehaviour
 
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
-    float musicVol;
-    float tempMus;
-    float tempSFXVol;
-    bool changingMusicWithKey = false;
+    int randomSFX;
+    int tick;
     
     // Start is called before the first frame update
     void Start()
     {
         musicSlider.value = MusicPlayer.musicVolume;
         SFXSlider.value = SoundPlayer.sfxVolume;
-        musicVol = MusicPlayer.musicVolume;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(musicSlider.interactable == false)
-        {
-            musicVol = MusicPlayer.musicVolume;
-            musicSlider.value = musicVol;
-        }
+        if (!musicSlider.interactable)
+            musicSlider.value = MusicPlayer.musicVolume;
         else
-            if (musicSlider.value != MusicPlayer.musicVolume)
-                MusicPlayer.musicVolume = musicSlider.value;
-            
+            MusicPlayer.musicVolume = musicSlider.value;
 
+        if (!SFXSlider.interactable)
+            SFXSlider.value = SoundPlayer.sfxVolume;
+        else
+            SoundPlayer.sfxVolume = SFXSlider.value;
 
-        //if (!Mouse.current.leftButton.isPressed && (!Keyboard.current.minusKey.isPressed || !Keyboard.current.equalsKey.isPressed))
-            //if(musicSlider.value != MusicPlayer.musicVolume)
-                //MusicPlayer.musicVolume = musicSlider.value;
-            
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+            if (EventSystem.current.currentSelectedGameObject?.name == "SFX Volume Slider")
+                playRandomSFX();
+    }
 
-        if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
-            musicSlider.interactable = true;
+    private void FixedUpdate()
+    {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+
+        }
+
     }
 
     public void UnloadOptionsUI()
@@ -53,10 +55,39 @@ public class OptionsUIScript : MonoBehaviour
 
     public void OnMusicSlider(InputValue value)
     {
-        if (value.Get<float>() > 0)
+        if (value.Get<float>() != 0)
             musicSlider.interactable = false;
-        else if (value.Get<float>() < 0)
-            musicSlider.interactable = false;
+        else
+            musicSlider.interactable = true;
+    }
+
+    public void OnSFXSlider(InputValue value)
+    {
+        if(value.Get<float>() != 0)
+            SFXSlider.interactable = false;
+        else
+        {
+            SFXSlider.interactable = true;
+            playRandomSFX();
+        }
+    }
+
+    protected void playRandomSFX()
+    {
+        randomSFX = Random.Range(0, 2);
+
+        switch (randomSFX)
+        {
+            case 0:
+                SoundPlayer.playSound("teleport 1");
+                break;
+            case 1:
+                SoundPlayer.playSound("teleport 2");
+                break;
+            case 2:
+                SoundPlayer.playSound("teleport 3");
+                break;
+        }
     }
 
 }
