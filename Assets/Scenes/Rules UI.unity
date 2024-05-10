@@ -457,8 +457,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 0.9752276, b: 0.2588235, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.97647065, b: 0.25882354, a: 1}
-    m_PressedColor: {r: 1, g: 0.8825042, b: 0.2588235, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.98487574, b: 0.5235849, a: 1}
+    m_PressedColor: {r: 1, g: 0.98986435, b: 0.6933962, a: 1}
     m_SelectedColor: {r: 1, g: 0.97647065, b: 0.25882354, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -622,8 +622,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.4198113, g: 0.50229645, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.41960788, g: 0.5019608, b: 1, a: 1}
-    m_PressedColor: {r: 0.21226418, g: 0.32403755, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5896226, g: 0.6478519, b: 1, a: 1}
+    m_PressedColor: {r: 0.7877358, g: 0.81805927, b: 1, a: 1}
     m_SelectedColor: {r: 0.41960788, g: 0.5019608, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1134,9 +1134,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.41960785, g: 0.5019608, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.41960788, g: 0.5019608, b: 1, a: 1}
-    m_PressedColor: {r: 0.21176471, g: 0.3254902, b: 1, a: 1}
+    m_NormalColor: {r: 0.4198113, g: 0.50229645, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5896226, g: 0.6478519, b: 1, a: 1}
+    m_PressedColor: {r: 0.7877358, g: 0.81805927, b: 1, a: 1}
     m_SelectedColor: {r: 0.41960788, g: 0.5019608, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1153,13 +1153,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1572930468}
+  m_TargetGraphic: {fileID: 736066782}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1384472442}
         m_TargetAssemblyTypeName: InstructionsScript, Assembly-CSharp
-        m_MethodName: rightArrowClick
+        m_MethodName: leftArrowClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

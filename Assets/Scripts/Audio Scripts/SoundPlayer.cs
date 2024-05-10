@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SoundPlayer : MonoBehaviour
 {
     static List<AudioSource> SFXList;
-    public static float sfxVolume = 0.5f;
+    public static float sfxVolume;
     float volumeAdjustMultiplier = 1;
-    int index = 0;
+    //int index = 0;
+    bool increasingVol = false;
+    bool decreasingVol = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class SoundPlayer : MonoBehaviour
             sfx.volume = sfxVolume;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) // Music player tester
+        /*if (Input.GetKeyDown(KeyCode.LeftShift)) // Music player tester
         {
             switch(index)
             {
@@ -57,31 +60,33 @@ public class SoundPlayer : MonoBehaviour
                 index = 0;
             else
                 index++;
-        }
+        }*/
 
-        // Used to control the SFX volume. Will be implemented in the new input system in a future.
-        if (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.RightBracket))
+        if (Keyboard.current.leftBracketKey.wasReleasedThisFrame || Keyboard.current.rightBracketKey.wasReleasedThisFrame)
+        {
             volumeAdjustMultiplier = 1;
+            increasingVol = false;
+            decreasingVol = false;
+        }
     }
 
     private void FixedUpdate() // Updates 50 times a second
     {
-        // Used to control the SFX volume. Will be implemented in the new input system in a future.
-        if (Input.GetKey(KeyCode.LeftBracket))
-        {
-            sfxVolume -= 0.001f * volumeAdjustMultiplier;
-            if (sfxVolume > 0.99f)
-                sfxVolume -= 0.015f;
-            if (volumeAdjustMultiplier < 4.5f)
-                volumeAdjustMultiplier += 0.02f;
-        }
-        if (Input.GetKey(KeyCode.RightBracket))
+        if (increasingVol)
         {
             sfxVolume += 0.001f * volumeAdjustMultiplier;
             if (sfxVolume < 0.01f)
                 sfxVolume += 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
-                volumeAdjustMultiplier += 0.02f;
+                volumeAdjustMultiplier += 0.01f;
+        }
+        else if (decreasingVol)
+        {
+            sfxVolume -= 0.001f * volumeAdjustMultiplier;
+            if (sfxVolume > 0.99f)
+                sfxVolume -= 0.015f;
+            if (volumeAdjustMultiplier < 4.5f)
+                volumeAdjustMultiplier += 0.01f;
         }
     }
 
@@ -99,5 +104,11 @@ public class SoundPlayer : MonoBehaviour
         Debug.Log("Couldn't find a SFX named: \"" + name + "\"");
     }
 
-
+    public void OnSFXVolume(InputValue value)
+    {
+        if (value.Get<float>() > 0)
+            increasingVol = true;
+        else if (value.Get<float>() < 0)
+            decreasingVol = true;
+    }
 }

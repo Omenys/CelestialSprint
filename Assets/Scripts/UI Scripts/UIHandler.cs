@@ -5,6 +5,7 @@ using TMPro;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] TMP_Text titleText;
+    [SerializeField] Button placeHolder;
     [SerializeField] Button gameButton;
     [SerializeField] Button creditsButton;
     [SerializeField] Button optionsButton;
@@ -25,6 +26,8 @@ public class UIHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        placeHolder.Select();
+
         if (isOnGame && !isOnCredits && !isOnOptions && !isOnRules) // clicked on Start Game
         {
             hideAll();

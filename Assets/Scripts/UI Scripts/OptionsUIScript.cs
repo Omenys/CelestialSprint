@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System.IO;
 
 public class OptionsUIScript : MonoBehaviour
 {
@@ -10,12 +11,13 @@ public class OptionsUIScript : MonoBehaviour
 
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
+    SaveAudioSettings saveThese;
     int randomSFX;
-    int tick;
     
     // Start is called before the first frame update
     void Start()
     {
+        saveThese = FindObjectOfType<SaveAudioSettings>();
         musicSlider.value = MusicPlayer.musicVolume;
         SFXSlider.value = SoundPlayer.sfxVolume;
     }
@@ -38,17 +40,9 @@ public class OptionsUIScript : MonoBehaviour
                 playRandomSFX();
     }
 
-    private void FixedUpdate()
+    public void OnClose()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-        {
-
-        }
-
-    }
-
-    public void UnloadOptionsUI()
-    {
+        saveThese.SaveAudio(MusicPlayer.musicVolume, SoundPlayer.sfxVolume);
         UIHandler.isOnOptions = false;
         SceneManager.UnloadSceneAsync("Options UI");
     }
@@ -72,7 +66,7 @@ public class OptionsUIScript : MonoBehaviour
         }
     }
 
-    protected void playRandomSFX()
+    void playRandomSFX()
     {
         randomSFX = Random.Range(0, 3);
 

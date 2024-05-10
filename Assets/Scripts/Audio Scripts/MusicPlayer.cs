@@ -6,9 +6,9 @@ public class MusicPlayer : MonoBehaviour
 {
     static List<AudioClip> BGMList;
     static AudioSource currentBGM;
-    public static float musicVolume = 0.5f;
+    public static float musicVolume;
     float volumeAdjustMultiplier = 1;
-    int index = 0;
+    //int index = 0;
     bool increasingVol = false;
     bool decreasingVol = false;
     
@@ -24,7 +24,7 @@ public class MusicPlayer : MonoBehaviour
     {
         currentBGM.volume = musicVolume;
 
-        if (Input.GetKeyDown(KeyCode.Return)) // Music player tester
+        /*if (Input.GetKeyDown(KeyCode.Return)) // Music player tester
         {
             switch (index)
             {
@@ -47,9 +47,9 @@ public class MusicPlayer : MonoBehaviour
                 index = 0;
             else
                 index++;
-        }
+        }*/
 
-        if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
+        if (Keyboard.current.minusKey.wasReleasedThisFrame || Keyboard.current.equalsKey.wasReleasedThisFrame)
         {
             volumeAdjustMultiplier = 1;
             increasingVol = false;
@@ -60,14 +60,13 @@ public class MusicPlayer : MonoBehaviour
 
     private void FixedUpdate() // Updates 50 times a second
     {
-        // Used to control the music volume. Will be implemented in the new input system in a future.
         if (increasingVol)
         {
             musicVolume += 0.001f * volumeAdjustMultiplier;
             if (musicVolume < 0.01)
                 musicVolume += 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
-                volumeAdjustMultiplier += 0.02f;
+                volumeAdjustMultiplier += 0.01f;
         }
         else if (decreasingVol)
         {
@@ -75,7 +74,7 @@ public class MusicPlayer : MonoBehaviour
             if (musicVolume > 0.99)
                 musicVolume -= 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
-                volumeAdjustMultiplier += 0.02f;
+                volumeAdjustMultiplier += 0.01f;
         }
     }
 
