@@ -9,30 +9,40 @@ public class OptionsUIScript : MonoBehaviour
 
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
-    float tempMusicVol;
+    float musicVol;
+    float tempMus;
     float tempSFXVol;
+    bool changingMusicWithKey = false;
     
     // Start is called before the first frame update
     void Start()
     {
         musicSlider.value = MusicPlayer.musicVolume;
         SFXSlider.value = SoundPlayer.sfxVolume;
+        musicVol = MusicPlayer.musicVolume;
     }
 
     // Update is called once per frame
     void Update()
     {
-        tempMusicVol = MusicPlayer.musicVolume;
-        tempSFXVol = SoundPlayer.sfxVolume;
+        if(musicSlider.interactable == false)
+        {
+            musicVol = MusicPlayer.musicVolume;
+            musicSlider.value = musicVol;
+        }
+        else
+            if (musicSlider.value != MusicPlayer.musicVolume)
+                MusicPlayer.musicVolume = musicSlider.value;
+            
 
-        if(musicSlider.value != tempMusicVol)
-            MusicPlayer.musicVolume = musicSlider.value;
-        if(SFXSlider.value != tempSFXVol)
-            SoundPlayer.sfxVolume = SFXSlider.value;
+
+        //if (!Mouse.current.leftButton.isPressed && (!Keyboard.current.minusKey.isPressed || !Keyboard.current.equalsKey.isPressed))
+            //if(musicSlider.value != MusicPlayer.musicVolume)
+                //MusicPlayer.musicVolume = musicSlider.value;
+            
 
         if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
             musicSlider.interactable = true;
-
     }
 
     public void UnloadOptionsUI()
@@ -44,15 +54,9 @@ public class OptionsUIScript : MonoBehaviour
     public void OnMusicSlider(InputValue value)
     {
         if (value.Get<float>() > 0)
-        {
-            //musicSlider.interactable = false;
-            musicSlider.value = MusicPlayer.musicVolume;
-        }
+            musicSlider.interactable = false;
         else if (value.Get<float>() < 0)
-        {
-            //musicSlider.interactable = false;
-            musicSlider.value = MusicPlayer.musicVolume;
-        }
+            musicSlider.interactable = false;
     }
 
 }
