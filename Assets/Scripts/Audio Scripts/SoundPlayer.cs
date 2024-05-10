@@ -7,7 +7,7 @@ public class SoundPlayer : MonoBehaviour
     static List<AudioSource> SFXList;
     public static float sfxVolume;
     float volumeAdjustMultiplier = 1;
-    //int index = 0;
+    int index = 0;
     bool increasingVol = false;
     bool decreasingVol = false;
 
@@ -25,7 +25,7 @@ public class SoundPlayer : MonoBehaviour
             sfx.volume = sfxVolume;
         }
 
-        /*if (Input.GetKeyDown(KeyCode.LeftShift)) // Music player tester
+        if (Input.GetKeyDown(KeyCode.LeftShift)) // Music player tester
         {
             switch(index)
             {
@@ -39,7 +39,7 @@ public class SoundPlayer : MonoBehaviour
                     playSound("teleport 3");
                     break;
                 case 3:
-                    playSound("healing");
+                    playSound("shield up");
                     break;
                 case 4:
                     playSound("shield breaks");
@@ -60,7 +60,7 @@ public class SoundPlayer : MonoBehaviour
                 index = 0;
             else
                 index++;
-        }*/
+        }
 
         if (Keyboard.current.leftBracketKey.wasReleasedThisFrame || Keyboard.current.rightBracketKey.wasReleasedThisFrame)
         {

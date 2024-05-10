@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 696830780}
   - component: {fileID: 696830781}
   m_Layer: 0
-  m_Name: healing
+  m_Name: shield up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +575,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 86028414c88a7714381a886e58cc74c5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c5b9d15d153b88045ab57f556d5fd37a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

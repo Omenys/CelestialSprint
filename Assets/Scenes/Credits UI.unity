@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
+  fastFoward: 0
   sectionOneParent: {fileID: 971204295}
   sOneTitle: {fileID: 1024293736}
   sOneLeftColumn: {fileID: 710133983}
@@ -1438,7 +1439,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Romariogrande\r\n\nszegvari\r\n\nSergeQuadrado\r\n\nZHR\xD8\r\n\nTheBuilder15\r\n\nGameAudio\r\n\nSergenious\r\n\nMetzik\r\n\nm_cel\r\n\nJace\r\n\nMATRIXXX_\r\n\nReincarnatedEchoes\r"
+  m_text: "Romariogrande\r\n\nszegvari\r\n\nSergeQuadrado\r\n\nZHR\xD8\r\n\nTheBuilder15\r\n\nGameAudio\r\n\nSergenious\r\n\nMetzik\r\n\nm_cel\r\n\nJace\r\n\nMATRIXXX_\r\n\nKenney
+    Website"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
@@ -1709,9 +1711,43 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Main music\r\n\nVictory music\r\n\nCredits music\r\n\nGame over music\r\n\nTeleport
-    1 sfx\r\n\nTeleport 2 sfx\r\n\nTeleport 3 sfx\r\n\nShield breaks sfx\r\n\nWarning
-    sfx\r\n\nShip breaking sfx\r\n\nGame over sfx\r\n\nHealing sfx\r"
+  m_text: 'Main music
+
+
+    Victory music
+
+
+    Credits music
+
+
+    Game over
+    music
+
+
+    Teleport 1 sfx
+
+
+    Teleport 2 sfx
+
+
+    Teleport 3 sfx
+
+
+    Shield
+    breaks sfx
+
+
+    Warning sfx
+
+
+    Ship breaking sfx
+
+
+    Game over sfx
+
+
+    Shield
+    up'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}

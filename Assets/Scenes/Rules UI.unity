@@ -612,7 +612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000053406, y: -389}
+  m_AnchoredPosition: {x: 0.000053406, y: -417}
   m_SizeDelta: {x: 464.0941, y: 154.1614}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491923913
@@ -1495,7 +1495,7 @@ Transform:
   m_GameObject: {fileID: 1384472440}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.55116, y: -60.270958, z: -7.3986664}
+  m_LocalPosition: {x: 173.55116, y: -88.27094, z: -7.3986664}
   m_LocalScale: {x: 1.8151261, y: 1.8151261, z: 1.8151261}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1876,13 +1876,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 736066782}
+  m_TargetGraphic: {fileID: 1572930468}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1384472442}
         m_TargetAssemblyTypeName: InstructionsScript, Assembly-CSharp
-        m_MethodName: leftArrowClick
+        m_MethodName: rightArrowClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

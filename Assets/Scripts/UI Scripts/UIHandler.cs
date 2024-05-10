@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIHandler : MonoBehaviour
@@ -26,7 +27,9 @@ public class UIHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        placeHolder.Select();
+        if(!SceneManager.GetSceneByName("Options UI").isLoaded)
+            placeHolder.Select();
+        
 
         if (isOnGame && !isOnCredits && !isOnOptions && !isOnRules) // clicked on Start Game
         {

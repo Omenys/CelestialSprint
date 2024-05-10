@@ -38,6 +38,7 @@ public class OptionsUIScript : MonoBehaviour
         if (Mouse.current.leftButton.wasReleasedThisFrame)
             if (EventSystem.current.currentSelectedGameObject?.name == "SFX Volume Slider")
                 playRandomSFX();
+
     }
 
     public void OnClose()
