@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MusicPlayer : MonoBehaviour
 {
@@ -10,8 +9,9 @@ public class MusicPlayer : MonoBehaviour
     public static float musicVolume = 0.5f;
     float volumeAdjustMultiplier = 1;
     int index = 0;
+    bool increasingVol = false;
+    bool decreasingVol = false;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,28 +49,31 @@ public class MusicPlayer : MonoBehaviour
                 index++;
         }
 
-
-        // Used to control the music volume. Will be implemented in the new input system in a future.
         if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
+        {
             volumeAdjustMultiplier = 1;
+            increasingVol = false;
+            decreasingVol = false;
+        }
+            
     }
 
     private void FixedUpdate() // Updates 50 times a second
     {
         // Used to control the music volume. Will be implemented in the new input system in a future.
-        if (Input.GetKey(KeyCode.Minus))
-        {
-            musicVolume -= 0.001f * volumeAdjustMultiplier;
-            if (musicVolume > 0.99)
-                musicVolume -= 0.015f;
-            if (volumeAdjustMultiplier < 4.5f)
-                volumeAdjustMultiplier += 0.02f;
-        }
-        if (Input.GetKey(KeyCode.Equals))
+        if (increasingVol)
         {
             musicVolume += 0.001f * volumeAdjustMultiplier;
             if (musicVolume < 0.01)
                 musicVolume += 0.015f;
+            if (volumeAdjustMultiplier < 4.5f)
+                volumeAdjustMultiplier += 0.02f;
+        }
+        else if (decreasingVol)
+        {
+            musicVolume -= 0.001f * volumeAdjustMultiplier;
+            if (musicVolume > 0.99)
+                musicVolume -= 0.015f;
             if (volumeAdjustMultiplier < 4.5f)
                 volumeAdjustMultiplier += 0.02f;
         }
@@ -91,5 +94,13 @@ public class MusicPlayer : MonoBehaviour
         }
         //If the foreach loop fails then...
         Debug.Log("Couldn't find a Music named: \"" + name + "\"");
+    }
+
+    public void OnMusicVolume(InputValue value)
+    {
+        if(value.Get<float>() > 0)
+            increasingVol = true;
+        else if(value.Get<float>() < 0)
+            decreasingVol = true;
     }
 }

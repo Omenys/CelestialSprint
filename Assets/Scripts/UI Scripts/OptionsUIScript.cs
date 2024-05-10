@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class OptionsUIScript : MonoBehaviour
 {
@@ -23,15 +22,17 @@ public class OptionsUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Here goes the audio serialization, do this when this is merged into the main branch.
-
         tempMusicVol = MusicPlayer.musicVolume;
-        tempSFXVol= SoundPlayer.sfxVolume;
+        tempSFXVol = SoundPlayer.sfxVolume;
 
         if(musicSlider.value != tempMusicVol)
             MusicPlayer.musicVolume = musicSlider.value;
         if(SFXSlider.value != tempSFXVol)
             SoundPlayer.sfxVolume = SFXSlider.value;
+
+        if (Input.GetKeyUp(KeyCode.Minus) || Input.GetKeyUp(KeyCode.Equals))
+            musicSlider.interactable = true;
+
     }
 
     public void UnloadOptionsUI()
@@ -39,4 +40,19 @@ public class OptionsUIScript : MonoBehaviour
         UIHandler.isOnOptions = false;
         SceneManager.UnloadSceneAsync("Options UI");
     }
+
+    public void OnMusicSlider(InputValue value)
+    {
+        if (value.Get<float>() > 0)
+        {
+            //musicSlider.interactable = false;
+            musicSlider.value = MusicPlayer.musicVolume;
+        }
+        else if (value.Get<float>() < 0)
+        {
+            //musicSlider.interactable = false;
+            musicSlider.value = MusicPlayer.musicVolume;
+        }
+    }
+
 }

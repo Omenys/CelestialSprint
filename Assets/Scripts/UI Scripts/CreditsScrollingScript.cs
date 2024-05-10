@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class CreditsScrollingScript : MonoBehaviour
 {
@@ -52,7 +50,7 @@ public class CreditsScrollingScript : MonoBehaviour
             sectionTwo();
         if (sThree)
             sectionThree();
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             MusicPlayer.playMusic("main music");
             UIHandler.isOnCredits = false;

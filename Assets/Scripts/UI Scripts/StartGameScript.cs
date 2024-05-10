@@ -20,6 +20,8 @@ public class StartGameScript : MonoBehaviour
 
     public void startTheGame()
     {
+        SceneManager.LoadSceneAsync("Gameplay", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Gameplay UI", LoadSceneMode.Additive);
         UIHandler.isOnGame = true;
     }
 }
