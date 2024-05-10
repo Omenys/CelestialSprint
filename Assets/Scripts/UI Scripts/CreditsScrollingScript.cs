@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class CreditsScrollingScript : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] bool fastFoward;
 
     // Section 1 stuff
     [SerializeField] GameObject sectionOneParent;
@@ -50,12 +51,6 @@ public class CreditsScrollingScript : MonoBehaviour
             sectionTwo();
         if (sThree)
             sectionThree();
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            MusicPlayer.playMusic("main music");
-            UIHandler.isOnCredits = false;
-            SceneManager.UnloadSceneAsync("Credits UI");
-        }
     }
 
     void resetCredits()
@@ -167,5 +162,20 @@ public class CreditsScrollingScript : MonoBehaviour
         {
             resetCredits();
         }
+    }
+
+    public void OnSpeedUp(InputValue value)
+    {
+        if (value.Get<float>() != 0)
+            speed *= 3;
+        else
+            speed /= 3;
+    }
+
+    public void OnClose()
+    {
+        MusicPlayer.playMusic("main music");
+        UIHandler.isOnCredits = false;
+        SceneManager.UnloadSceneAsync("Credits UI");
     }
 }

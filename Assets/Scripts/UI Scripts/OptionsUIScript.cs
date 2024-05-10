@@ -74,7 +74,7 @@ public class OptionsUIScript : MonoBehaviour
 
     protected void playRandomSFX()
     {
-        randomSFX = Random.Range(0, 2);
+        randomSFX = Random.Range(0, 3);
 
         switch (randomSFX)
         {

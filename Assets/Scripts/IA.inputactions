@@ -98,9 +98,18 @@
             "id": "5683c453-9dfd-4138-b031-49ca6b7345e7",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
+                    "name": "SpeedUp",
+                    "type": "Value",
                     "id": "14691b0a-2524-4145-bc28-9be40b4268c1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "62ac3f19-d3da-427f-b98e-582362bea973",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,11 +120,44 @@
                 {
                     "name": "",
                     "id": "e53a9b3d-2ddd-443b-a399-f9be1cf9f7a5",
-                    "path": "",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af237bee-1478-4e77-91ec-f58c81fc70a8",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1131590b-beb2-4524-af78-21ff1ed8e80e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6984ea6-ce60-4172-9dcc-d357e6d11b05",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -127,12 +169,12 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "18d90f5d-f79d-49e9-b91f-ff4401ee7d6c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -162,6 +204,39 @@
                     "name": "negative",
                     "id": "97353f2f-1d71-44b0-88c5-ea645df8fce1",
                     "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "315a79b6-3e1c-43b1-8271-91a2e214b941",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "886078c1-c795-40fd-8ab8-3c0837062f99",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "753e0c9f-2380-486c-beb4-f8b8de1bb3cb",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
