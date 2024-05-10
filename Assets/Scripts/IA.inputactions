@@ -1,0 +1,440 @@
+{
+    "name": "IA",
+    "maps": [
+        {
+            "name": "Options",
+            "id": "ad120d69-1249-4c7e-a4a7-23609ce5096a",
+            "actions": [
+                {
+                    "name": "Music Slider",
+                    "type": "Value",
+                    "id": "17e24970-487c-4125-9e26-2d88c65ea749",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SFX Slider",
+                    "type": "Value",
+                    "id": "0390b8bc-190f-40ec-b47a-b8df87837d30",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "2a6dd227-896c-4a98-8030-5aaf2aeffd49",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "8ac0e33c-7bcc-4db2-8ca8-032853f4e905",
+                    "path": "1DAxis",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Slider",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "84d1ed37-cc20-40d5-8e4a-05b39b20654c",
+                    "path": "<Keyboard>/equals",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Slider",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "3a5e3188-3841-4a65-a687-defcfb2cbb46",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Slider",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "04c83285-2e73-47c3-aa57-3f2f03559b04",
+                    "path": "1DAxis",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Slider",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "34ca39bc-ee49-48a9-b4bd-041881c337e9",
+                    "path": "<Keyboard>/rightBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Slider",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "928f3292-cdca-429d-b546-eb59f3e222b9",
+                    "path": "<Keyboard>/leftBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Slider",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "cfa7b04d-86fa-4405-8ad7-e5ca6190f1a5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a193528c-7143-4a57-8967-6231b5a28a89",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Credits",
+            "id": "5683c453-9dfd-4138-b031-49ca6b7345e7",
+            "actions": [
+                {
+                    "name": "SpeedUp",
+                    "type": "Value",
+                    "id": "14691b0a-2524-4145-bc28-9be40b4268c1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "62ac3f19-d3da-427f-b98e-582362bea973",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e53a9b3d-2ddd-443b-a399-f9be1cf9f7a5",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af237bee-1478-4e77-91ec-f58c81fc70a8",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1131590b-beb2-4524-af78-21ff1ed8e80e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6984ea6-ce60-4172-9dcc-d357e6d11b05",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Gameplay",
+            "id": "0a551480-7de4-4917-be61-0622595c5778",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Value",
+                    "id": "18d90f5d-f79d-49e9-b91f-ff4401ee7d6c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WS",
+                    "id": "b6df0678-5eeb-49df-b3d8-2d7ad496d267",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "98ba0702-1972-4c1c-b044-f4df35632b79",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "97353f2f-1d71-44b0-88c5-ea645df8fce1",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "UpDownArrows",
+                    "id": "a77e0b08-11dd-49b3-8de2-a48824f65c88",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "fb8984b6-2e9a-4dd9-937b-b2a89b89690b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "12fff177-2b57-4844-b2f0-b0c2d720a898",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "GamepadLJoystick",
+                    "id": "aad4e1f0-d012-453f-bb07-b7be0aebac02",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "18892586-da54-452d-8acc-ee5fa377477d",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "55713890-5816-42c5-b38d-04e0e7f26e57",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "GamepadDPad",
+                    "id": "38dc65aa-bcaf-4654-81de-6479d1b93187",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "1f2b8add-5780-4d30-9c3e-82e0919eae85",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "125a5be7-1f37-46c8-b634-88e6b95a4852",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Volume",
+            "id": "b0b4a835-b306-4e77-b41b-a9e64155aea3",
+            "actions": [
+                {
+                    "name": "Music Volume",
+                    "type": "Value",
+                    "id": "d0fca727-e6e5-4080-95b3-82a7f8b16a9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SFX Volume",
+                    "type": "Value",
+                    "id": "59c1a575-0e02-49fa-a5cd-f0cdc636026d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "7d419eb2-5463-4109-9f07-b5a3bb2c599e",
+                    "path": "1DAxis",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Volume",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "c537c9c9-ce58-47e6-b291-31045ab336b5",
+                    "path": "<Keyboard>/equals",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Volume",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "73fb1875-b17f-4fa2-8893-611fcc87a8c7",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Music Volume",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "020c5f5a-2c66-4112-9573-b32eea94c491",
+                    "path": "1DAxis",
+                    "interactions": "Hold(duration=0.01,pressPoint=0.01)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Volume",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "9bbb6ca0-a406-495d-9231-6df600888e7b",
+                    "path": "<Keyboard>/rightBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Volume",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "bb6d93a1-2b78-4e6f-81bb-d1157d6da7e3",
+                    "path": "<Keyboard>/leftBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SFX Volume",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
