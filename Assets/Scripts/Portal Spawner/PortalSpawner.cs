@@ -6,7 +6,6 @@ public class PortalSpawner : MonoBehaviour
 {
     [SerializeField] GameObject portals;
     float timer;
-    Vector2 movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +20,7 @@ public class PortalSpawner : MonoBehaviour
         if (timer > 10)
         {
             portalSpawn();
-            movement = new Vector2(-2, 0).normalized;
+            timer = -30;
         }
 
     }
@@ -30,5 +29,6 @@ public class PortalSpawner : MonoBehaviour
     {
         GameObject obj = Instantiate(portals, transform);
         obj.transform.position = new Vector2(10, 0); //position of where the portal spawns
+        Destroy(obj.gameObject, 15); //Destroys spawned object after 15 seconds (The idea of it despawning off screen)
     }
 }

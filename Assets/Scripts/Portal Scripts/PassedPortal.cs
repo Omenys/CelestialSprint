@@ -22,17 +22,17 @@ public class PassedPortal : MonoBehaviour
         transform.Translate(Vector2.left * speed * Time.deltaTime); //moves spawner to the left
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other) //when player collides with trigger
     {
         if (other.gameObject.GetComponent<Movement>() != null)
         {
             Spawn();
         }
     }
-    private void Spawn()
+    private void Spawn() //Spawns asteroid wall
     {
         GameObject gameObject = Instantiate(obj, transform);
 
-        gameObject.transform.position = new Vector2(-4, 11);
+        gameObject.transform.position = new Vector2(13, 0);
     }
 }
