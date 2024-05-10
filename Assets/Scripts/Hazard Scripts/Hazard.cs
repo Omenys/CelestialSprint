@@ -49,7 +49,7 @@ public class Hazard : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other) //When player collides with asteroid
     {
-        if (other.gameObject.GetComponent<Movement>() != null)
+        if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             stat.currentShieldCount -= 1;
         }

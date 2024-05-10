@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ShieldChargeStat
   m_EditorClassIdentifier: 
   maxShieldCount: 3
-  currentShieldCount: 0
+  currentShieldCount: 1

@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MovementWithNewInput : MonoBehaviour
 {
+    [SerializeField] ShieldChargeStat shield;
+    [SerializeField] PortalEntered entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;
