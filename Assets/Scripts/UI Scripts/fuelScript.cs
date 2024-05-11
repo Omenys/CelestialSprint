@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class fuelScript : MonoBehaviour
 {
-    float fuelLeft = 100;
+    public float fuelLeft = 100;
     [SerializeField] int fuelDurationInSeconds;
     float fuelDrainRate;
     [SerializeField] Image fuelBar;
@@ -35,6 +35,7 @@ public class fuelScript : MonoBehaviour
 
     void Start()
     {
+        fuelLeft = 100;
         fuelBar.color = fuelColors[0];
         fuelDrainRate = fuelLeft / fuelDurationInSeconds;
     }
@@ -45,7 +46,6 @@ public class fuelScript : MonoBehaviour
 
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            Debug.Log("hi");
             uiPortalsCount++;
         }
 

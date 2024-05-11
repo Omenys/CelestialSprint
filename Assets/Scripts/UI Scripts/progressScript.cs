@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class progressScript : MonoBehaviour
 {
     [SerializeField] int portalsAmountToWin;
-    [SerializeField] Image progressBar;
+    [SerializeField] public Image progressBar;
     [SerializeField] Image progressBarBackground;
     [SerializeField] Color progressBarColor;
     [SerializeField] Color progressBarBackgroundColor;
@@ -38,7 +38,7 @@ public class progressScript : MonoBehaviour
     void victory() // The player went through all the portals :D
     {
         SceneManager.LoadSceneAsync("Victory UI", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Gameplay UI");
+        //SceneManager.UnloadSceneAsync("Gameplay UI");
     }
 
     void theGameDuration()
@@ -49,7 +49,6 @@ public class progressScript : MonoBehaviour
             temp = uiPortalsCount;
             //uiPortalsCount = portalsCount.portalsEntered;
             progressBar.fillAmount = (float)uiPortalsCount / 10;
-            Debug.Log((float)uiPortalsCount / 10);
             if(progressBar.fillAmount >= 1)
             {
                 hasWon = true;
@@ -71,7 +70,7 @@ public class progressScript : MonoBehaviour
             if (alpha <= 0)
             {
                 tick_two++;
-                if(tick_two > 150)
+                if(tick_two == 150)
                 {
                     victory();
                 }

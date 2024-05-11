@@ -133,7 +133,7 @@ public class CreditsScrollingScript : MonoBehaviour
             sTwoLeftColumn.transform.localPosition = new Vector2(-597.01f, sTwoColY);
             sTwoRightColumn.transform.localPosition = new Vector2(582, sTwoColY);
         }
-        if(sTwoColY > 925)
+        if(sTwoColY > 550)
         {
             toggleSection(sectionThreeParent, true);
             sThree = true;
