@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     public Sprite greenPortal;
     public Sprite bluePortal;
     public float colorChangeInterval;
+    [SerializeField] float portalSpeed;
 
     float colorTimer;
 
@@ -70,6 +71,7 @@ public class Portal : MonoBehaviour
             colorTimer = 0;
         }
 
+        transform.position += Vector3.left * portalSpeed * Time.deltaTime;
 
     }
 

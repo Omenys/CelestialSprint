@@ -3,7 +3,7 @@ using UnityEngine;
 public class PortalSpawner : MonoBehaviour
 {
     [SerializeField] GameObject portals;
-    [SerializeField] public float spawnTimer = 10f;
+    [SerializeField] public float spawnTimer = 5f;
     [SerializeField] public float portalLife = 10f;
 
 
@@ -42,9 +42,14 @@ public class PortalSpawner : MonoBehaviour
         float screenX = Camera.main.aspect * Camera.main.orthographicSize;
         float screenY = Camera.main.orthographicSize;
 
+        // Adjust spawn heights
+        float minX = screenX * 0.5f;
+        float minY = -screenY * 0.3f;
+        float maxY = 3;
+
         // Spawn portal within screen boundaries
-        float randomX = Random.Range(-screenX, screenX);
-        float randomY = Random.Range(-screenY, screenY);
+        float randomX = Random.Range(minX, screenX);
+        float randomY = Random.Range(minY, maxY);
 
         return new Vector2(randomX, randomY);
 
