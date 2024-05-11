@@ -13,7 +13,7 @@ public class progressScript : MonoBehaviour
     [SerializeField] Color progressBarColor;
     [SerializeField] Color progressBarBackgroundColor;
     bool hasWon = false;
-    [SerializeField] PortalEntered portalsCount;
+    //[SerializeField] PortalEntered portalsCount;
     int uiPortalsCount = 0;
     int temp = 0;
     int tick = 0;
