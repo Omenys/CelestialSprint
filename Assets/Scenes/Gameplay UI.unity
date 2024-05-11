@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuelLeft: 100
-  fuelDurationInSeconds: 5
+  fuelDurationInSeconds: 150
   fuelBar: {fileID: 438970938}
   fuelBackground: {fileID: 1438363710}
   fuelColors:
