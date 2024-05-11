@@ -26,7 +26,7 @@ public class fuelScript : MonoBehaviour
     float randomY;
     [SerializeField] float shakingPower;
     [SerializeField] float criticalShakingPower;
-    [SerializeField] PortalEntered portalsCount;
+    //[SerializeField] PortalEntered portalsCount;
     int uiPortalsCount = 0;
     bool hasWon = false;
     int tick = 0;

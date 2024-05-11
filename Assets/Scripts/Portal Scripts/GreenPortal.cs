@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GreenPortal : MonoBehaviour
 {
-    PortalEntered portal;
+    //PortalEntered portal;
 
     private void OnTriggerEnter(Collider other)
     {
-        portal.portalsEntered += 2;
+        //portal.portalsEntered += 2;
     }
 }
