@@ -77,6 +77,7 @@ public class Portal : MonoBehaviour
                     obj = Instantiate(shieldCharge, transform);
                     obj.transform.position = new Vector2(15, 0);
                     break;
+
                 case (PortalColor.Blue):
                     spawner.spawnDelay = 6.3f;
                     asteroid.maxSpeed = 100;
@@ -87,6 +88,7 @@ public class Portal : MonoBehaviour
                         obj.transform.position = new Vector2(15, 0);
                     }
                     break;
+
                 case (PortalColor.Green):
                     spawner.spawnDelay = 4.5f;
                     asteroid.maxSpeed = 250;
