@@ -15,7 +15,7 @@ public class Hazard : MonoBehaviour
 
     private void Start()
     {
-        Vector2 move = new Vector2(Random.Range(-maxSpeed, -1), Random.Range(-maxSpeed, maxSpeed)); //speed
+        Vector2 move = new Vector2(Random.Range(-maxSpeed, -3), Random.Range(-maxSpeed, maxSpeed)); //speed
 
         float spin = Random.Range(-maxSpin, maxSpin); //spin
 

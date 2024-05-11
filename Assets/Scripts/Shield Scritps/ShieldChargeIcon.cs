@@ -22,7 +22,7 @@ public class ShieldChargeIcon : MonoBehaviour
     {
         RemoveIcon();
         AddIcon();
-        if (Input.GetKeyUp(KeyCode.Space))
+       /* if (Input.GetKeyUp(KeyCode.Space))
         {
             stat.currentShieldCount -= 1;
             RemoveIcon();
@@ -31,7 +31,7 @@ public class ShieldChargeIcon : MonoBehaviour
         {
             stat.currentShieldCount += 1;
             AddIcon();
-        }
+        }*/ //Testing code
         
     }
 
@@ -41,6 +41,8 @@ public class ShieldChargeIcon : MonoBehaviour
         {
             shieldIcons[i].SetActive(false);
         }*/
+
+        //I am sorry for inefficient code T_T
 
         if (stat.currentShieldCount == 2)
         {
