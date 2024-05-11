@@ -30,14 +30,15 @@ public class MovementWithNewInput : MonoBehaviour
 
         // Movement in y direction
         direction = new Vector2(0, directionY).normalized;
-        
+
 
         if (shield.currentShieldCount <= 0)
         {
-            SceneManager.LoadSceneAsync("GameOver UI", LoadSceneMode.Additive);
+
             MusicPlayer.playMusic("game over");
             SceneManager.UnloadSceneAsync("Gameplay");
             SceneManager.UnloadSceneAsync("Gameplay UI");
+            SceneManager.LoadSceneAsync("GameOver UI", LoadSceneMode.Additive);
         }
     }
 

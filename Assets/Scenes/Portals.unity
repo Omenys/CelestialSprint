@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292388916}
-  - component: {fileID: 1292388915}
   - component: {fileID: 1292388914}
+  - component: {fileID: 1292388917}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -193,25 +193,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1292388915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292388913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6992d16ca71b44f84fe2b0e08cdaa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portalSprite: {fileID: 211624455, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
-  redPortal: {fileID: -1414796036, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
-  greenPortal: {fileID: 211624455, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
-  bluePortal: {fileID: -1449458713, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
-  colorChangeInterval: 6
-  portalSpeed: 3.5
-  portalsEntered: 0
 --- !u!4 &1292388916
 Transform:
   m_ObjectHideFlags: 0
@@ -227,6 +208,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1413807439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1292388917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292388913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aa5925af0ba244a8241d51fe0a0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldCharge: {fileID: 8395127198592079832, guid: a18d3e09ac16b084f85f4723935d1942, type: 3}
+  portalSprite: {fileID: 0}
+  redPortal: {fileID: -1414796036, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
+  greenPortal: {fileID: 211624455, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
+  bluePortal: {fileID: -1449458713, guid: 96c5a5271fd85de4ba547e11b7db2caa, type: 3}
+  colorChangeInterval: 6
+  portalSpeed: 2
+  portalsEntered: 0
 --- !u!4 &1413807439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3476091944329906028, guid: f20b62daa4163eb44b85e7135b196f67, type: 3}
