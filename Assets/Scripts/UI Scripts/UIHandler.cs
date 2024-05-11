@@ -21,7 +21,7 @@ public class UIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MusicPlayer.playMusic("main music");
+
     }
 
     // Update is called once per frame

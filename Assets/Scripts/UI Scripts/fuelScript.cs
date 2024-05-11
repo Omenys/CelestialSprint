@@ -11,16 +11,25 @@ public class fuelScript : MonoBehaviour
     float fuelDrainRate;
     [SerializeField] Image fuelBar;
     [SerializeField] Image fuelBackground;
+    [SerializeField] Color[] fuelColors;
+    [SerializeField] int lowFuelPercentageNum;
+    [SerializeField] int criticalFuelPercentageNum;
+    float timer = 0;
+    bool startedBlinking = false;
+    bool switchColor = true;
+    [SerializeField] float blinkingInterval;
     bool hasFuel = true;
     float x = 290;
     float y = 172;
     float randomX;
     float randomY;
     [SerializeField] float shakingPower;
+    [SerializeField] float criticalShakingPower;
 
 
     void Start()
     {
+        fuelBar.color = fuelColors[0];
         fuelDrainRate = fuelLeft / fuelDurationInSeconds;
     }
 
@@ -28,12 +37,14 @@ public class fuelScript : MonoBehaviour
     {
         drainFuel();
 
-        if(fuelLeft > 0 && fuelLeft <= 20) // The ship has only 20% fuel left D:
+        if (fuelLeft > criticalFuelPercentageNum && fuelLeft <= lowFuelPercentageNum) // The ship has low fuel D:
         {
-            randomX = Random.Range(x + shakingPower, x - shakingPower);
-            randomY = Random.Range(y + shakingPower, y - shakingPower);
-            fuelBar.transform.localPosition = new Vector2(randomX, randomY);
-            fuelBackground.transform.localPosition = new Vector2(randomX, randomY);
+            shakingAnim();
+        }
+        else if (fuelLeft > 0 && fuelLeft <= criticalFuelPercentageNum) // CRITICAL FUEL NOOOOOOOOOO
+        {
+            criticalShakingAnim();
+            lowFuelBlinking();
         }
     }
 
@@ -58,6 +69,48 @@ public class fuelScript : MonoBehaviour
             {
                 hasFuel = false;
                 noMoreFuel();
+            }
+        }
+    }
+
+    void shakingAnim()
+    {
+        randomX = Random.Range(x + shakingPower, x - shakingPower);
+        randomY = Random.Range(y + shakingPower, y - shakingPower);
+        fuelBar.transform.localPosition = new Vector2(randomX, randomY);
+        fuelBackground.transform.localPosition = new Vector2(randomX, randomY);
+    }
+
+    void criticalShakingAnim()
+    {
+        randomX = Random.Range(x + criticalShakingPower, x - criticalShakingPower);
+        randomY = Random.Range(y + criticalShakingPower, y - criticalShakingPower);
+        fuelBar.transform.localPosition = new Vector2(randomX, randomY);
+        fuelBackground.transform.localPosition = new Vector2(randomX, randomY);
+    }
+
+    void lowFuelBlinking()
+    {
+        if(!startedBlinking)
+        {
+            startedBlinking = true;
+            fuelBar.color = fuelColors[1];
+        }
+
+        timer += Time.deltaTime;
+
+        if (timer > blinkingInterval)
+        {
+            timer = 0;
+            if(!switchColor)
+            {
+                switchColor = true;
+                fuelBar.color = fuelColors[0];
+            }
+            else
+            {
+                switchColor = false;
+                fuelBar.color = fuelColors[1];
             }
         }
     }

@@ -319,8 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311f9d053d27c9042aa3cfc3eb003a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalsAmountToWin: 1
+  portalsAmountToWin: 999
   progressBar: {fileID: 1340283118}
+  greenPortal: 0
 --- !u!1 &1139245535
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +880,14 @@ MonoBehaviour:
   fuelDurationInSeconds: 150
   fuelBar: {fileID: 438970938}
   fuelBackground: {fileID: 1438363710}
-  shakingPower: 1.75
+  fuelColors:
+  - {r: 1, g: 0.61960787, b: 0, a: 1}
+  - {r: 0.9811321, g: 0.8596612, b: 0.66180134, a: 1}
+  lowFuelPercentageNum: 20
+  criticalFuelPercentageNum: 10
+  blinkingInterval: 0.275
+  shakingPower: 1.25
+  criticalShakingPower: 2.5
 --- !u!1 &2138618623
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,6 +88,10 @@ public class MusicPlayer : MonoBehaviour
                     currentBGM.Stop();
                 currentBGM.clip = music;
                 currentBGM.Play();
+                if(name == "victory") // The victory music will only play once, it won't loop like the rest
+                    currentBGM.loop = false;
+                else
+                    currentBGM.loop = true;
                 return;
             }
         }
