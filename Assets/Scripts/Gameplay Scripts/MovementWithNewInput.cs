@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MovementWithNewInput : MonoBehaviour
 {
+    [SerializeField] ShieldChargeStat shield;
+    [SerializeField] Portal entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;
@@ -13,6 +15,8 @@ public class MovementWithNewInput : MonoBehaviour
     {
         // Get rigid body component
         rb = GetComponent<Rigidbody2D>();
+        shield.currentShieldCount = shield.maxShieldCount;
+        entered.portalsEntered = 0;
     }
 
     // Update is called once per frame
@@ -25,7 +29,7 @@ public class MovementWithNewInput : MonoBehaviour
 
         // Movement in y direction
         direction = new Vector2(0, directionY).normalized;
-        
+
     }
 
     private void FixedUpdate()

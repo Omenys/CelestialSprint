@@ -1,10 +1,9 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat shield;
-    [SerializeField] PortalEntered entered;
+    [SerializeField] Portal entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;

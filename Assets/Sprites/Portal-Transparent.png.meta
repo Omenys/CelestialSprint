@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 297
+        width: 297.5
         height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d824c2232496d864482c3fb7b781149b
-      internalID: -622575852
+      spriteID: 471d67fee6254cd419cdc0be01c941e0
+      internalID: -1449458713
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
         serializedVersion: 2
         x: 297
         y: 0
-        width: 297
+        width: 297.5
         height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 646f1c6db8cbaa34c9386b78af8205c3
-      internalID: -1916004669
+      spriteID: a347910bb749caa449204f941172f9c4
+      internalID: -1414796036
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
         serializedVersion: 2
         x: 594
         y: 0
-        width: 297
+        width: 297.5
         height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ac5a35d11bfc644da4662ffac299bfe
-      internalID: -1261809945
+      spriteID: c8270037d6f895242a9da0487d706e1d
+      internalID: 863668036
       vertices: []
       indices: 
       edges: []
@@ -165,7 +165,7 @@ TextureImporter:
         serializedVersion: 2
         x: 891
         y: 0
-        width: 297
+        width: 297.5
         height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5197b2133a8fe4248a8d8fd347bd7fd8
-      internalID: -782925362
+      spriteID: 94e7982aee19b584b9bf099633a71a85
+      internalID: 211624455
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Portal-Transparent_0: -622575852
-      Portal-Transparent_1: -1916004669
-      Portal-Transparent_2: -1261809945
-      Portal-Transparent_3: -782925362
+      Portal-Transparent_0: -1449458713
+      Portal-Transparent_1: -1414796036
+      Portal-Transparent_2: 863668036
+      Portal-Transparent_3: 211624455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

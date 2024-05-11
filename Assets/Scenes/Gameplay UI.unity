@@ -321,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalsAmountToWin: 1
   progressBar: {fileID: 1340283118}
+  greenPortal: 0
 --- !u!1 &1139245535
 GameObject:
   m_ObjectHideFlags: 0
