@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hazard : MonoBehaviour
@@ -25,7 +23,7 @@ public class Hazard : MonoBehaviour
 
     private void FixedUpdate() //Keeping the asteroid from fully going outside of camera perspective
     {
-   
+
         Vector2 newPos = transform.position;
         if (transform.position.y > screenTop)
         {
@@ -43,15 +41,21 @@ public class Hazard : MonoBehaviour
         {
             newPos.x = screenRight;
         }
-       
+
         transform.position = newPos;
-   
+
     }
     public void OnTriggerEnter2D(Collider2D other) //When player collides with asteroid
     {
+        //Debug.Log("Collided with Asteroid");
         if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             stat.currentShieldCount -= 1;
         }
+    }
+
+    public void setMaxSpeed(float speed)
+    {
+        maxSpeed = speed;
     }
 }

@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
     GameObject obj;
     HazardSpawner spawner;
     Hazard asteroid;
-    PortalColor portal;
+    //PortalColor portal;
     public Sprite portalSprite;
     public Sprite redPortal;
     public Sprite greenPortal;
@@ -34,6 +34,9 @@ public class Portal : MonoBehaviour
         //SetPortalColor();
         render = GetComponent<SpriteRenderer>();
         //render.sprite = portalSprite;
+
+        spawner = FindAnyObjectByType<HazardSpawner>();
+        asteroid = FindAnyObjectByType<Hazard>();
     }
 
     void SetPortalColor()
@@ -65,7 +68,22 @@ public class Portal : MonoBehaviour
         }
     }
 
-
+    void playRandomTeleportSFX()
+    {
+        int rand = Random.Range(0, 2);
+        switch (rand)
+        {
+            case 0:
+                SoundPlayer.playSound("teleport 1");
+                break;
+            case 1:
+                SoundPlayer.playSound("teleport 2");
+                break;
+            case 2:
+                SoundPlayer.playSound("teleport 3");
+                break;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -85,34 +103,44 @@ public class Portal : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
-            switch (portal)
+            if (render.sprite == redPortal)
             {
-                case (PortalColor.Red):
-                    spawner.spawnDelay = 3.5f;
-                    asteroid.maxSpeed = 300;
-                    obj = Instantiate(shieldCharge, transform);
-                    obj.transform.position = new Vector2(15, 0);
-                    break;
+                Debug.Log("Red Portal Entered");
+                playRandomTeleportSFX();
+                portalsEntered += 1;
+                spawner.spawnDelay = 3.5f;
+                asteroid.setMaxSpeed(300);
+                Instantiate(shieldCharge, transform);
+                shieldCharge.transform.position = new Vector2(15, 0);
 
-                case (PortalColor.Blue):
-                    spawner.spawnDelay = 6.3f;
-                    asteroid.maxSpeed = 100;
-                    int rand = Random.Range(1, 100);
-                    if (rand < 60 && rand > 50)
-                    {
-                        obj = Instantiate(shieldCharge, transform);
-                        obj.transform.position = new Vector2(15, 0);
-                    }
-                    break;
-
-                case (PortalColor.Green):
-                    spawner.spawnDelay = 4.5f;
-                    asteroid.maxSpeed = 250;
-                    obj.transform.position = new Vector2(15, 0);
-                    break;
             }
+            if (render.sprite == bluePortal)
+            {
+                Debug.Log("Blue Portal Entered");
+                portalsEntered += 1;
+                playRandomTeleportSFX();
+                spawner.setSpawnDelay(6.3f);
+                asteroid.setMaxSpeed(100);
+                int rand = Random.Range(1, 100);
+                if (rand < 60 && rand > 50)
+                {
+                    Instantiate(shieldCharge, transform);
+                    shieldCharge.transform.position = new Vector2(15, 0);
+                }
+            }
+
+            if (render.sprite == greenPortal)
+            {
+                Debug.Log("Green Portal Entered");
+                portalsEntered += 2;
+                playRandomTeleportSFX();
+                spawner.setSpawnDelay(4.5f);
+                asteroid.setMaxSpeed(250);
+                obj.transform.position = new Vector2(15, 0);
+            }
+            Debug.Log(portalsEntered);
         }
+
     }
-
-
 }
+

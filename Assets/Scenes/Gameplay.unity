@@ -504,6 +504,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4174540060699831199, guid: 89e57f260eadd9d4e9b3eb1d5dee5b33, type: 3}
+      propertyPath: spawnDelay
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7165513410557363526, guid: 89e57f260eadd9d4e9b3eb1d5dee5b33, type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner

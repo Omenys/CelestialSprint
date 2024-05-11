@@ -1,17 +1,21 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HazardSpawner : MonoBehaviour
 {
     [SerializeField] GameObject asteroid; //placing asteroid prefab
-    public float spawnDelay; //adjustable spawn delay
+    public float spawnDelay = 0f; //adjustable spawn delay
     float spawnTime;
+
+    public void setSpawnDelay(float delay)
+    {
+        spawnDelay = delay;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
