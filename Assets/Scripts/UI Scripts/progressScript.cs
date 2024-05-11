@@ -38,7 +38,7 @@ public class progressScript : MonoBehaviour
     void victory() // The player went through all the portals :D
     {
         SceneManager.LoadSceneAsync("Victory UI", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Gameplay UI");
+        //SceneManager.UnloadSceneAsync("Gameplay UI");
     }
 
     void theGameDuration()
@@ -71,7 +71,7 @@ public class progressScript : MonoBehaviour
             if (alpha <= 0)
             {
                 tick_two++;
-                if(tick_two > 150)
+                if(tick_two == 150)
                 {
                     victory();
                 }

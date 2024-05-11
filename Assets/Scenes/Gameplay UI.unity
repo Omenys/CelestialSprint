@@ -828,7 +828,6 @@ MonoBehaviour:
   progressBarBackground: {fileID: 838919786}
   progressBarColor: {r: 0.7647059, g: 0.8784314, b: 0.15294118, a: 1}
   progressBarBackgroundColor: {r: 0.27450982, g: 0.8117647, b: 0, a: 1}
-  portalsCount: {fileID: 11400000, guid: 893808324ae8f294f97f70803f92bd5f, type: 2}
 --- !u!1 &1139245535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1401,6 @@ MonoBehaviour:
   - {fileID: 1383838383}
   - {fileID: 414695860}
   - {fileID: 1918863725}
-  portalsCount: {fileID: 11400000, guid: 893808324ae8f294f97f70803f92bd5f, type: 2}
 --- !u!1 &1770505207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c41f6f95f7f9347b81a970d393c1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelLeft: 100
   fuelDurationInSeconds: 150
   fuelBar: {fileID: 438970938}
   fuelBackground: {fileID: 1438363710}
@@ -1605,7 +1604,6 @@ MonoBehaviour:
   blinkingInterval: 0.275
   shakingPower: 1.25
   criticalShakingPower: 2.5
-  portalsCount: {fileID: 11400000, guid: 893808324ae8f294f97f70803f92bd5f, type: 2}
 --- !u!1 &2138618623
 GameObject:
   m_ObjectHideFlags: 0

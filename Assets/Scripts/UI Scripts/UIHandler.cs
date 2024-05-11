@@ -53,7 +53,7 @@ public class UIHandler : MonoBehaviour
             optionsButton.gameObject.SetActive(false);
             rulesButton.gameObject.SetActive(false);
         }
-        else
+        else // Is on main menu
         {
             showAll();
             if (playMainMusicOnLoop)

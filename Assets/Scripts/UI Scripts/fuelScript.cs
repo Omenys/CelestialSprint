@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class fuelScript : MonoBehaviour
 {
-    float fuelLeft = 100;
+    public float fuelLeft = 100;
     [SerializeField] int fuelDurationInSeconds;
     float fuelDrainRate;
     [SerializeField] Image fuelBar;
