@@ -35,6 +35,7 @@ public class fuelScript : MonoBehaviour
 
     void Start()
     {
+        fuelLeft = 100;
         fuelBar.color = fuelColors[0];
         fuelDrainRate = fuelLeft / fuelDurationInSeconds;
     }
