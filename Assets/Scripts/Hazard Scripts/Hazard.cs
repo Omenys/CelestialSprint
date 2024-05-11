@@ -50,6 +50,7 @@ public class Hazard : MonoBehaviour
         //Debug.Log("Collided with Asteroid");
         if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
+            SoundPlayer.playSound("shield breaks");
             stat.currentShieldCount -= 1;
         }
     }
