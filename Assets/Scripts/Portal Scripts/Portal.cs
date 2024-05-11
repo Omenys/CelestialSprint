@@ -138,7 +138,6 @@ public class Portal : MonoBehaviour
                 playRandomTeleportSFX();
                 spawner.setSpawnDelay(4.5f);
                 asteroid.setMaxSpeed(250);
-                obj.transform.position = new Vector2(15, 0);
             }
             Debug.Log(portalsEntered);
         }
