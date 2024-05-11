@@ -9,7 +9,7 @@ using System.Linq;
 public class planetsScript : MonoBehaviour
 {
     [SerializeField] RawImage[] planets;
-    [SerializeField] PortalEntered portalsCount;
+    //[SerializeField] PortalEntered portalsCount;
     int uiPortalsCount = 0;
     int temp = 0;
     bool spawn = false;
