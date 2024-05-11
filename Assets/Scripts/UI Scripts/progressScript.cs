@@ -3,59 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class progressScript : MonoBehaviour
 {
-    float levelDurationInSeconds = 10; // 10 seconds
     [SerializeField] int portalsAmountToWin;
-    float gameDurationInSeconds;
-    float progressBarRate;
-    float currentProgress = 0;
     [SerializeField] Image progressBar;
+    [SerializeField] Image progressBarBackground;
+    [SerializeField] Color progressBarColor;
+    [SerializeField] Color progressBarBackgroundColor;
     bool hasWon = false;
-    [SerializeField] bool greenPortal = false;
+    [SerializeField] PortalEntered portalsCount;
+    int uiPortalsCount = 0;
+    int temp = 0;
+    int tick = 0;
+    int tick_two = 0;
+    float alpha = 1.0f;
 
 
     void Start()
     {
-        gameDurationInSeconds = levelDurationInSeconds * portalsAmountToWin;
-        progressBarRate = 0.1f / portalsAmountToWin;
+
     }
 
     void Update()
     {
         theGameDuration();
-        if (greenPortal)
-            inAGreenPortal();
+        if(Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            uiPortalsCount++;
+        }
     }
 
     void victory() // The player went through all the portals :D
     {
         SceneManager.LoadSceneAsync("Victory UI", LoadSceneMode.Additive);
-        MusicPlayer.playMusic("victory");
         SceneManager.UnloadSceneAsync("Gameplay UI");
     }
 
     void theGameDuration()
     {
-        if (currentProgress < 1)
+        //if (uiPortalsCount != portalsCount.portalsEntered)
+        if (uiPortalsCount != temp)
         {
-            currentProgress += progressBarRate * Time.deltaTime;
-            progressBar.fillAmount = currentProgress;
-        }
-        else
-        {
-            if(!hasWon)
+            temp = uiPortalsCount;
+            //uiPortalsCount = portalsCount.portalsEntered;
+            progressBar.fillAmount = (float)uiPortalsCount / 10;
+            Debug.Log((float)uiPortalsCount / 10);
+            if(progressBar.fillAmount >= 1)
             {
                 hasWon = true;
-                victory();
+                MusicPlayer.playMusic("victory");
             }
         }
     }
 
-    public void inAGreenPortal() // Must be called while the player is inside a green portal (Gameplay)
+    private void FixedUpdate() // Updates 50 times per second
     {
-        if (currentProgress < 1)
-            currentProgress += progressBarRate * Time.deltaTime;
+        if(hasWon)
+        {
+            if(tick > 75)
+            {
+                progressBar.color = new Color(progressBarColor.r, progressBarColor.g, progressBarColor.b, alpha);
+                progressBarBackground.color = new Color(progressBarBackgroundColor.r, progressBarBackgroundColor.g, progressBarBackgroundColor.b, alpha);
+                alpha -= 0.005f;
+            }
+            if (alpha <= 0)
+            {
+                tick_two++;
+                if(tick_two > 150)
+                {
+                    victory();
+                }
+            }
+            tick++;
+        }
     }
 }

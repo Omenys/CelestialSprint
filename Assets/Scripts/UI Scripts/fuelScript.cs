@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class fuelScript : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class fuelScript : MonoBehaviour
     float randomY;
     [SerializeField] float shakingPower;
     [SerializeField] float criticalShakingPower;
+    [SerializeField] PortalEntered portalsCount;
+    int uiPortalsCount = 0;
+    bool hasWon = false;
+    int tick = 0;
+    float alpha = 1.0f;
 
 
     void Start()
@@ -35,17 +41,33 @@ public class fuelScript : MonoBehaviour
 
     void Update()
     {
-        drainFuel();
+        //uiPortalsCount = portalsCount.portalsEntered;
 
-        if (fuelLeft > criticalFuelPercentageNum && fuelLeft <= lowFuelPercentageNum) // The ship has low fuel D:
+        if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            shakingAnim();
+            Debug.Log("hi");
+            uiPortalsCount++;
         }
-        else if (fuelLeft > 0 && fuelLeft <= criticalFuelPercentageNum) // CRITICAL FUEL NOOOOOOOOOO
+
+        if (uiPortalsCount < 10) // Game lasts 10 portals
         {
-            criticalShakingAnim();
-            lowFuelBlinking();
+            drainFuel();
+
+            if (fuelLeft > criticalFuelPercentageNum && fuelLeft <= lowFuelPercentageNum) // The ship has low fuel D:
+            {
+                shakingAnim();
+            }
+            else if (fuelLeft > 0 && fuelLeft <= criticalFuelPercentageNum) // CRITICAL FUEL NOOOOOOOOOO
+            {
+                criticalShakingAnim();
+                lowFuelBlinking();
+            }
         }
+        else
+        {
+            hasWon = true;
+        }
+
     }
 
     void noMoreFuel() // Game over :(
@@ -112,6 +134,20 @@ public class fuelScript : MonoBehaviour
                 switchColor = false;
                 fuelBar.color = fuelColors[1];
             }
+        }
+    }
+
+    private void FixedUpdate() // Updates 50 times per second
+    {
+        if (hasWon)
+        {
+            if (tick > 75 && alpha > 0)
+            {
+                fuelBar.color = new Color(fuelColors[0].r, fuelColors[0].g, fuelColors[0].b, alpha);
+                fuelBackground.color = new Color(fuelColors[2].r, fuelColors[2].g, fuelColors[2].b, alpha);
+                alpha -= 0.005f;
+            }
+            tick++;
         }
     }
 }
