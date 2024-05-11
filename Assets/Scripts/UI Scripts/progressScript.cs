@@ -13,9 +13,6 @@ public class progressScript : MonoBehaviour
     [SerializeField] Color progressBarColor;
     [SerializeField] Color progressBarBackgroundColor;
     bool hasWon = false;
-    //[SerializeField] PortalEntered portalsCount;
-    int uiPortalsCount = 0;
-    int temp = 0;
     int tick = 0;
     int tick_two = 0;
     float alpha = 1.0f;
@@ -28,35 +25,22 @@ public class progressScript : MonoBehaviour
 
     void Update()
     {
-        theGameDuration();
-        if(Keyboard.current.rKey.wasPressedThisFrame)
+        if (progressBar.fillAmount == 1)
         {
-            uiPortalsCount++;
+            hasWon = true;
+            if(SceneManager.GetSceneByName("Portals").isLoaded && SceneManager.GetSceneByName("Hazards").isLoaded)
+            {
+                MusicPlayer.playMusic("victory");
+                SceneManager.UnloadSceneAsync("Portals");
+                SceneManager.UnloadSceneAsync("Hazards");
+            }
         }
     }
 
     void victory() // The player went through all the portals :D
     {
         SceneManager.LoadSceneAsync("Victory UI", LoadSceneMode.Additive);
-        //SceneManager.UnloadSceneAsync("Gameplay UI");
     }
-
-    void theGameDuration()
-    {
-        //if (uiPortalsCount != portalsCount.portalsEntered)
-        if (uiPortalsCount != temp)
-        {
-            temp = uiPortalsCount;
-            //uiPortalsCount = portalsCount.portalsEntered;
-            progressBar.fillAmount = (float)uiPortalsCount / 10;
-            if(progressBar.fillAmount >= 1)
-            {
-                hasWon = true;
-                MusicPlayer.playMusic("victory");
-            }
-        }
-    }
-
     private void FixedUpdate() // Updates 50 times per second
     {
         if(hasWon)
@@ -77,5 +61,10 @@ public class progressScript : MonoBehaviour
             }
             tick++;
         }
+    }
+
+    public void portalCollision()
+    {
+        progressBar.fillAmount += 0.1f;
     }
 }

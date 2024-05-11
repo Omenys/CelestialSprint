@@ -15,6 +15,7 @@ public class Portal : MonoBehaviour
     public Sprite bluePortal;
     public float colorChangeInterval;
     [SerializeField] float portalSpeed;
+    progressScript bar;
 
     float colorTimer;
 
@@ -27,7 +28,6 @@ public class Portal : MonoBehaviour
     }
 
     public int portalsEntered = 0; //tracks number of portals entered by player
-    int shieldCharges = 0; //tracks amount of shield charges spawned
 
     public void Awake()
     {
@@ -37,6 +37,7 @@ public class Portal : MonoBehaviour
 
         spawner = FindAnyObjectByType<HazardSpawner>();
         asteroid = FindAnyObjectByType<Hazard>();
+        bar = FindAnyObjectByType<progressScript>();
     }
 
     void SetPortalColor()
@@ -105,6 +106,7 @@ public class Portal : MonoBehaviour
         {
             if (render.sprite == redPortal)
             {
+                bar.portalCollision();
                 Debug.Log("Red Portal Entered");
                 playRandomTeleportSFX();
                 SoundPlayer.playSound("shield up");
@@ -117,6 +119,7 @@ public class Portal : MonoBehaviour
             }
             if (render.sprite == bluePortal)
             {
+                bar.portalCollision();
                 Debug.Log("Blue Portal Entered");
                 portalsEntered += 1;
                 playRandomTeleportSFX();
@@ -133,13 +136,14 @@ public class Portal : MonoBehaviour
 
             if (render.sprite == greenPortal)
             {
+                bar.portalCollision();
                 Debug.Log("Green Portal Entered");
                 portalsEntered += 2;
                 playRandomTeleportSFX();
                 spawner.setSpawnDelay(4.5f);
                 asteroid.setMaxSpeed(250);
             }
-            Debug.Log(portalsEntered);
+            //Debug.Log(portalsEntered);
         }
 
     }

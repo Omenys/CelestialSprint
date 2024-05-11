@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class fuelScript : MonoBehaviour
 {
@@ -26,11 +27,10 @@ public class fuelScript : MonoBehaviour
     float randomY;
     [SerializeField] float shakingPower;
     [SerializeField] float criticalShakingPower;
-    //[SerializeField] PortalEntered portalsCount;
-    int uiPortalsCount = 0;
     bool hasWon = false;
     int tick = 0;
     float alpha = 1.0f;
+    [SerializeField] Image bar;
 
 
     void Start()
@@ -42,14 +42,7 @@ public class fuelScript : MonoBehaviour
 
     void Update()
     {
-        //uiPortalsCount = portalsCount.portalsEntered;
-
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            uiPortalsCount++;
-        }
-
-        if (uiPortalsCount < 10) // Game lasts 10 portals
+        if (bar.fillAmount < 1)
         {
             drainFuel();
 

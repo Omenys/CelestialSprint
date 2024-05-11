@@ -1026,6 +1026,7 @@ GameObject:
   - component: {fileID: 1226509291}
   - component: {fileID: 1226509290}
   - component: {fileID: 1226509292}
+  - component: {fileID: 1226509293}
   m_Layer: 5
   m_Name: Shield Bar
   m_TagString: Untagged
@@ -1116,6 +1117,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &1226509293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226509288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6992d16ca71b44f84fe2b0e08cdaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: {fileID: 11400000, guid: cdcd4568be9e8e64bb76ba6b35d0705e, type: 2}
+  shieldIcons:
+  - {fileID: 2138618623}
+  - {fileID: 1770505207}
+  - {fileID: 1139245535}
 --- !u!1 &1340283116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuelLeft: 100
-  fuelDurationInSeconds: 2
+  fuelDurationInSeconds: 150
   fuelBar: {fileID: 438970938}
   fuelBackground: {fileID: 1438363710}
   fuelColors:
@@ -1605,6 +1623,7 @@ MonoBehaviour:
   blinkingInterval: 0.275
   shakingPower: 1.25
   criticalShakingPower: 2.5
+  bar: {fileID: 1340283118}
 --- !u!1 &2138618623
 GameObject:
   m_ObjectHideFlags: 0
