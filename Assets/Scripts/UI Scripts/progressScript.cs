@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class progressScript : MonoBehaviour
 {
     [SerializeField] int portalsAmountToWin;
-    [SerializeField] Image progressBar;
+    [SerializeField] public Image progressBar;
     [SerializeField] Image progressBarBackground;
     [SerializeField] Color progressBarColor;
     [SerializeField] Color progressBarBackgroundColor;

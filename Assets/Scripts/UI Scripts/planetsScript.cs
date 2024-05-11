@@ -14,6 +14,7 @@ public class planetsScript : MonoBehaviour
     float x;
     int random;
     bool canSpawn = false;
+    float fill;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,9 @@ public class planetsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canSpawn)
+        fill = FindObjectOfType<progressScript>().progressBar.fillAmount;
+
+        if (canSpawn)
         {
             rng();
             canSpawn = false;
@@ -48,6 +51,12 @@ public class planetsScript : MonoBehaviour
                 planets[random].gameObject.SetActive(false);
                 canSpawn = true;
             }
+        }
+
+        if(fill >= 1)
+        {
+            planets[random].gameObject.SetActive(false);
+            enabled = false;
         }
 
     }
