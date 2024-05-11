@@ -46,7 +46,6 @@ public class fuelScript : MonoBehaviour
 
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
-            Debug.Log("hi");
             uiPortalsCount++;
         }
 

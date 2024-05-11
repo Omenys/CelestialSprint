@@ -16,7 +16,7 @@ public class InstructionsScript : MonoBehaviour
         {
             case 0:
                 instructionsText.color = new Color(0.1843137f, 0.8784314f, 0.5663072f, 1);
-                instructionsText.text = "Your goal is to travel space on a ship moving through portals to arrive your destination planet";
+                instructionsText.text = "Your goal is to travel space on a ship moving through portals to arrive Earth";
                 break;
             case 1:
                 instructionsText.color = new Color(0.1862318f, 0.8773585f, 0.7152424f, 1);
@@ -44,15 +44,15 @@ public class InstructionsScript : MonoBehaviour
                 break;
             case 7:
                 instructionsText.color = new Color(0.4874732f, 0.1843137f, 0.8784314f, 1);
-                instructionsText.text = "Going through a <color=red>Red portal</color> will <b>spawn many asteroids and 1 guaranteed <color=#00FFFF>shield charge</color>, your progression will increase by 1</b>";
+                instructionsText.text = "Going through a <color=red>Red portal</color> will <b>give you 1 guaranteed <color=#00FFFF>shield charge</color>, your progression will increase by 1</b>";
                 break;
             case 8:
                 instructionsText.color = new Color(0.7545319f, 0.1843137f, 0.8784314f, 1);
-                instructionsText.text = "Going through a <color=blue>Blue portal</color> will <b>spawn less asteroids and can rarely spawn 1 <color=#00FFFF>shield charge</color>, your progression will increase by 1</b>";
+                instructionsText.text = "Going through a <color=blue>Blue portal</color> will <b>spawn less asteroids and rarely can give you 1 <color=#00FFFF>shield charge</color>, your progression will increase by 1</b>";
                 break;
             case 9:
                 instructionsText.color = new Color(0.8784314f, 0.1843137f, 0.8125698f, 1);
-                instructionsText.text = "Going through a <color=green>Green portal</color> will <b>spawn faster asteroids and won't spawn any <color=#00FFFF>shield charges</color> but...</b>";
+                instructionsText.text = "Going through a <color=green>Green portal</color> will <b>spawn faster asteroids and won't give you any <color=#00FFFF>shield charges</color> but...</b>";
                 break;
             case 10:
                 instructionsText.color = new Color(0.8784314f, 0.1843137f, 0.5865815f, 1);
@@ -60,22 +60,14 @@ public class InstructionsScript : MonoBehaviour
                 break;
             case 11:
                 instructionsText.color = new Color(0.8784314f, 0.1843137f, 0.3069981f, 1);
-                instructionsText.text = "If you don't make it into a portal, an unavoidable cluster of asteroids will be ahead...";
+                instructionsText.text = "Lastly, your ship only has a limited amount of <color=orange>fuel</color>";
                 break;
             case 12:
                 instructionsText.color = new Color(0.8784314f, 0.3112189f, 0.1843137f, 1);
-                instructionsText.text = "...and your progression will decrease by 1";
+                instructionsText.text = "It only lasts 150 seconds! Gotta go fast!";
                 break;
             case 13:
                 instructionsText.color = new Color(0.8784314f, 0.4871765f, 0.1843137f, 1);
-                instructionsText.text = "Lastly, your ship only has a limited amount of <color=orange>fuel</color>";
-                break;
-            case 14:
-                instructionsText.color = new Color(0.8784314f, 0.6738171f, 0.1843137f, 1);
-                instructionsText.text = "It only lasts 150 seconds! Gotta go fast!";
-                break;
-            case 15:
-                instructionsText.color = new Color(0.8784314f, 0.8212512f, 0.1843137f, 1);
                 instructionsText.text = "Obvioustly running out of fuel will cause a game over";
                 break;
         }
@@ -86,12 +78,12 @@ public class InstructionsScript : MonoBehaviour
         if (index > 0)
             index--;
         else
-            index = 15;
+            index = 13;
     }
 
     public void rightArrowClick()
     {
-        if (index < 15)
+        if (index < 13)
             index++;
         else
             index = 0;

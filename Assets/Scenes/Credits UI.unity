@@ -829,7 +829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &929827075
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Romariogrande\r\n\nszegvari\r\n\nSergeQuadrado\r\n\nZHR\xD8\r\n\nTheBuilder15\r\n\nGameAudio\r\n\nSergenious\r\n\nMetzik\r\n\nm_cel\r\n\nJace\r\n\nMATRIXXX_\r\n\nKenney
+  m_text: "Romariogrande\r\n\nszegvari\r\n\nSergeQuadrado\r\n\nZHR\xD8\r\n\nTheBuilder15\r\n\nGameAudio\r\n\nSergenious\r\n\nMetzik\r\n\nm_cel\r\n\nKenney
     Website"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
@@ -1720,11 +1720,11 @@ MonoBehaviour:
     Credits music
 
 
-    Game over
-    music
+    Game over music
 
 
-    Teleport 1 sfx
+    Teleport
+    1 sfx
 
 
     Teleport 2 sfx
@@ -1733,21 +1733,14 @@ MonoBehaviour:
     Teleport 3 sfx
 
 
-    Shield
-    breaks sfx
+    Shield breaks sfx
 
 
-    Warning sfx
+    Warning
+    sfx
 
 
-    Ship breaking sfx
-
-
-    Game over sfx
-
-
-    Shield
-    up'
+    Shield up'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}
   m_sharedMaterial: {fileID: 250262783227932330, guid: d9e47e20c0fdb9b42a18396b4593e9ad, type: 2}

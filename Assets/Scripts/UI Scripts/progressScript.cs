@@ -49,7 +49,6 @@ public class progressScript : MonoBehaviour
             temp = uiPortalsCount;
             //uiPortalsCount = portalsCount.portalsEntered;
             progressBar.fillAmount = (float)uiPortalsCount / 10;
-            Debug.Log((float)uiPortalsCount / 10);
             if(progressBar.fillAmount >= 1)
             {
                 hasWon = true;

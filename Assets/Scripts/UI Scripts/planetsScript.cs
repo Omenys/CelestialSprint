@@ -10,12 +10,10 @@ public class planetsScript : MonoBehaviour
 {
     [SerializeField] RawImage[] planets;
     //[SerializeField] PortalEntered portalsCount;
-    int uiPortalsCount = 0;
-    int temp = 0;
-    bool spawn = false;
-    float speed = 8;
+    [SerializeField] float speed;
     float x;
     int random;
+    bool canSpawn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,35 +22,39 @@ public class planetsScript : MonoBehaviour
         {
             planets.gameObject.SetActive(false);
         }
+        canSpawn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Keyboard.current.rKey.wasPressedThisFrame)
+        if(canSpawn)
         {
-            uiPortalsCount++;
+            rng();
+            canSpawn = false;
         }
-
-        if (uiPortalsCount != temp)
-        {
-            temp = uiPortalsCount;
-            random = Random.Range(0, planets.Length - 1);
-            planets[random].gameObject.SetActive(true);
-            x = 40;
-            spawn = true;
-        }
-
-        if(spawn)
+        else
         {
             planets[random].gameObject.SetActive(true);
-            planets[random].color = new Color(1, 1, 1, 0.2f);
-            planets[random].transform.localPosition = new Vector2(40, -94);
-            if (planets[random].transform.localPosition.x > -80)
+            planets[random].color = new Color(1, 1, 1, 0.15f);
+            planets[random].transform.localPosition = new Vector2(x, -94);
+            if (planets[random].transform.localPosition.x > -860)
             {
                 x -= speed * Time.deltaTime;
                 planets[random].transform.localPosition = new Vector2(x, -94);
             }
+            if (planets[random].transform.localPosition.x <= -860)
+            {
+                planets[random].gameObject.SetActive(false);
+                canSpawn = true;
+            }
         }
+
+    }
+
+    void rng()
+    {
+        random = Random.Range(0, planets.Length - 1);
+        x = 750;
     }
 }
