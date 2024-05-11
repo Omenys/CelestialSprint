@@ -17,7 +17,7 @@ public class MovementWithNewInput : MonoBehaviour
         // Get rigid body component
         rb = GetComponent<Rigidbody2D>();
         shield.currentShieldCount = shield.maxShieldCount;
-        entered.portalsEntered = 0;
+        //entered.portalsEntered = 0;
     }
 
     // Update is called once per frame

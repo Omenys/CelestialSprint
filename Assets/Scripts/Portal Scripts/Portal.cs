@@ -3,7 +3,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     SpriteRenderer render;
-    [SerializeField] PortalEntered entered;
+    //[SerializeField] PortalEntered entered;
     [SerializeField] GameObject shieldCharge;
     GameObject obj;
     HazardSpawner spawner;

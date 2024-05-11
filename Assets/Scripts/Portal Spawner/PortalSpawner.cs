@@ -3,7 +3,7 @@ using UnityEngine;
 public class PortalSpawner : MonoBehaviour
 {
     [SerializeField] GameObject portals;
-    //[SerializeField] float spawnTimer = 10f;
+    [SerializeField] float spawnTimer = 10f;
     [SerializeField] float portalLife = 10f;
     float timer;
     // Start is called before the first frame update
