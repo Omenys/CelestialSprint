@@ -3,13 +3,9 @@ using UnityEngine;
 public class PortalSpawner : MonoBehaviour
 {
     [SerializeField] GameObject portals;
-    [SerializeField] public float spawnTimer = 10f;
-    [SerializeField] public float portalLife = 10f;
-
-
-    public float timer;
-
-
+    //[SerializeField] float spawnTimer = 10f;
+    [SerializeField] float portalLife = 10f;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +30,12 @@ public class PortalSpawner : MonoBehaviour
         GameObject obj = Instantiate(portals);
         obj.transform.position = GetPortalPosition();
         Destroy(obj.gameObject, portalLife); //Destroys spawned object after 15 seconds (The idea of it despawning off screen)
+
+
+
+        /*GameObject obj = Instantiate(portals, transform);
+        obj.transform.position = new Vector2(10, 0); //position of where the portal spawns
+        Destroy(obj.gameObject, 15);*/ //Destroys spawned object after 15 seconds (The idea of it despawning off screen)
     }
 
     Vector2 GetPortalPosition()

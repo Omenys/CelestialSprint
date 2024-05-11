@@ -3,6 +3,12 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     SpriteRenderer render;
+    [SerializeField] PortalEntered entered;
+    [SerializeField] GameObject shieldCharge;
+    GameObject obj;
+    HazardSpawner spawner;
+    Hazard asteroid;
+    PortalColor portal;
     public Sprite portalSprite;
     public Sprite redPortal;
     public Sprite greenPortal;
@@ -75,7 +81,35 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.GetComponent<MovementWithNewInput>() != null)
+        {
+            switch (portal)
+            {
+                case (PortalColor.Red):
+                    spawner.spawnDelay = 3.5f;
+                    asteroid.maxSpeed = 300;
+                    obj = Instantiate(shieldCharge, transform);
+                    obj.transform.position = new Vector2(15, 0);
+                    break;
 
+                case (PortalColor.Blue):
+                    spawner.spawnDelay = 6.3f;
+                    asteroid.maxSpeed = 100;
+                    int rand = Random.Range(1, 100);
+                    if (rand < 60 && rand > 50)
+                    {
+                        obj = Instantiate(shieldCharge, transform);
+                        obj.transform.position = new Vector2(15, 0);
+                    }
+                    break;
+
+                case (PortalColor.Green):
+                    spawner.spawnDelay = 4.5f;
+                    asteroid.maxSpeed = 250;
+                    obj.transform.position = new Vector2(15, 0);
+                    break;
+            }
+        }
     }
 
 

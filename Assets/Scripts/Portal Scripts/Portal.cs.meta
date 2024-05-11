@@ -1,9 +1,15 @@
 fileFormatVersion: 2
-guid: af6992d16ca71b44f84fe2b0e08cdaa7
+guid: 27aa5925af0ba244a8241d51fe0a0e52
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - entered: {fileID: 11400000, guid: 893808324ae8f294f97f70803f92bd5f, type: 2}
+  - shieldCharge: {fileID: 2146583200594009506, guid: 3dd78d2b52ad0334585a83fdd11fa2b2, type: 3}
+  - portalSprite: {instanceID: 0}
+  - redPortal: {instanceID: 0}
+  - greenPortal: {instanceID: 0}
+  - bluePortal: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

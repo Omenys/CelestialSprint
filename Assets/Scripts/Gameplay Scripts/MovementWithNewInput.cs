@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MovementWithNewInput : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat shield;
-    [SerializeField] Portal entered;
+    //[SerializeField] PortalEntered entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;
@@ -29,7 +30,15 @@ public class MovementWithNewInput : MonoBehaviour
 
         // Movement in y direction
         direction = new Vector2(0, directionY).normalized;
+        
 
+        if (shield.currentShieldCount <= 0)
+        {
+            SceneManager.LoadSceneAsync("GameOver UI", LoadSceneMode.Additive);
+            MusicPlayer.playMusic("game over");
+            SceneManager.UnloadSceneAsync("Gameplay");
+            SceneManager.UnloadSceneAsync("Gameplay UI");
+        }
     }
 
     private void FixedUpdate()

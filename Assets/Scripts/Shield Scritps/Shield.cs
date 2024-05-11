@@ -9,10 +9,15 @@ public class Shield : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<Movement>() != null)
+        if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             Destroy(shield); //Destroys shield objet from scene
-            stats.currentShieldCount++; //Adds a charge to the player's current shield count
+            stats.currentShieldCount +=1; //Adds a charge to the player's current shield count
+
+            if (stats.currentShieldCount > 3)
+            {
+                stats.currentShieldCount = stats.maxShieldCount;
+            }
         }
     }
 }

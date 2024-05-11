@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Portal Scripts/Portal.cs.meta
+guid: af6992d16ca71b44f84fe2b0e08cdaa7
+========
+guid: f334898b42cb3ca4c8c69b605680f4b4
+>>>>>>>> Hazards:Assets/Scripts/Shield Scritps/ShieldChargeIcon.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

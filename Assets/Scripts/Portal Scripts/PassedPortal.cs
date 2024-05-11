@@ -24,7 +24,7 @@ public class PassedPortal : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other) //when player collides with trigger
     {
-        if (other.gameObject.GetComponent<Movement>() != null)
+        if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             Spawn();
         }

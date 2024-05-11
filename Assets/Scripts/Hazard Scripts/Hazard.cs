@@ -15,7 +15,7 @@ public class Hazard : MonoBehaviour
 
     private void Start()
     {
-        Vector2 move = new Vector2(Random.Range(-maxSpeed, -1), Random.Range(-maxSpeed, maxSpeed)); //speed
+        Vector2 move = new Vector2(Random.Range(-maxSpeed, -3), Random.Range(-maxSpeed, maxSpeed)); //speed
 
         float spin = Random.Range(-maxSpin, maxSpin); //spin
 
@@ -49,7 +49,7 @@ public class Hazard : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other) //When player collides with asteroid
     {
-        if (other.gameObject.GetComponent<Movement>() != null)
+        if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             stat.currentShieldCount -= 1;
         }
