@@ -107,6 +107,7 @@ public class Portal : MonoBehaviour
             {
                 Debug.Log("Red Portal Entered");
                 playRandomTeleportSFX();
+                SoundPlayer.playSound("shield up");
                 portalsEntered += 1;
                 spawner.spawnDelay = 3.5f;
                 asteroid.setMaxSpeed(300);
@@ -119,6 +120,7 @@ public class Portal : MonoBehaviour
                 Debug.Log("Blue Portal Entered");
                 portalsEntered += 1;
                 playRandomTeleportSFX();
+                SoundPlayer.playSound("shield up");
                 spawner.setSpawnDelay(6.3f);
                 asteroid.setMaxSpeed(100);
                 int rand = Random.Range(1, 100);

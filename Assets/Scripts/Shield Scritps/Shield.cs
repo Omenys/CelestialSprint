@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
@@ -12,11 +10,15 @@ public class Shield : MonoBehaviour
         if (other.gameObject.GetComponent<MovementWithNewInput>() != null)
         {
             Destroy(shield); //Destroys shield objet from scene
-            stats.currentShieldCount +=1; //Adds a charge to the player's current shield count
+            stats.currentShieldCount += 1; //Adds a charge to the player's current shield count
 
             if (stats.currentShieldCount > 3)
             {
                 stats.currentShieldCount = stats.maxShieldCount;
+            }
+            if (stats.currentShieldCount <= 1)
+            {
+                SoundPlayer.playSound("warning");
             }
         }
     }
