@@ -60,15 +60,23 @@ public class InstructionsScript : MonoBehaviour
                 break;
             case 11:
                 instructionsText.color = new Color(0.8784314f, 0.1843137f, 0.3069981f, 1);
-                instructionsText.text = "Lastly, your ship only has a limited amount of <color=orange>fuel</color>";
+                instructionsText.text = "When the portals spawn, there's a chance they will change colors at any time.";
                 break;
             case 12:
                 instructionsText.color = new Color(0.8784314f, 0.3112189f, 0.1843137f, 1);
-                instructionsText.text = "It only lasts 150 seconds! Gotta go fast!";
+                instructionsText.text = "Lastly, your ship only has a limited amount of <color=orange>fuel</color>";
                 break;
             case 13:
                 instructionsText.color = new Color(0.8784314f, 0.4871765f, 0.1843137f, 1);
+                instructionsText.text = "It only lasts 150 seconds! Gotta go fast!";
+                break;
+            case 14:
+                instructionsText.color = new Color(0.8784314f, 0.6940368f, 0.1843137f ,1);
                 instructionsText.text = "Obvioustly running out of fuel will cause a game over";
+                break;
+            case 15:
+                instructionsText.color = new Color(0.8784314f, 0.8545474f, 0.1843137f, 1);
+                instructionsText.text = "Your score relies of how much fuel you had when winning";
                 break;
         }
     }
@@ -78,12 +86,12 @@ public class InstructionsScript : MonoBehaviour
         if (index > 0)
             index--;
         else
-            index = 13;
+            index = 15;
     }
 
     public void rightArrowClick()
     {
-        if (index < 13)
+        if (index < 15)
             index++;
         else
             index = 0;

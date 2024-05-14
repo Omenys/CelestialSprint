@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
-using System.Linq;
 
 public class planetsScript : MonoBehaviour
 {
     [SerializeField] RawImage[] planets;
-    //[SerializeField] PortalEntered portalsCount;
     [SerializeField] float speed;
     float x;
     int random;

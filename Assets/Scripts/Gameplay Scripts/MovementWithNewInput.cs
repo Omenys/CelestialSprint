@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class MovementWithNewInput : MonoBehaviour
 {
     [SerializeField] ShieldChargeStat shield;
-    //[SerializeField] PortalEntered entered;
     [SerializeField] float speed = 5f;
     Rigidbody2D rb;
     Vector2 direction;
@@ -23,14 +22,9 @@ public class MovementWithNewInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        // Input from player 
-        //directionY = Input.GetAxis("Vertical");
-
         // Movement in y direction
-        direction = new Vector2(0, directionY).normalized;
 
+        direction = new Vector2(0, directionY).normalized;
 
         if (shield.currentShieldCount <= 0)
         {

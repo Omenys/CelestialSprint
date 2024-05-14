@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PortalSpawner : MonoBehaviour
@@ -31,9 +32,13 @@ public class PortalSpawner : MonoBehaviour
 
     private void portalSpawn()
     {
-        GameObject obj = Instantiate(portals);
-        obj.transform.position = GetPortalPosition();
-        Destroy(obj.gameObject, portalLife); //Destroys spawned object after 15 seconds (The idea of it despawning off screen)
+        if(!portals.IsDestroyed())
+        {
+            GameObject obj = Instantiate(portals);
+            obj.transform.position = GetPortalPosition();
+            Destroy(obj.gameObject, portalLife); //Destroys spawned object after 15 seconds (The idea of it despawning off screen)
+        }
+
     }
 
     Vector2 GetPortalPosition()

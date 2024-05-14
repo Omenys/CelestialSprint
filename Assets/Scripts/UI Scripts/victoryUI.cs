@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +31,7 @@ public class victoryUI : MonoBehaviour
         }
         if(tick == 200)
             scoreText.text = "Your final score is: " + fuelScore.ToString();
-        if(tick == 350)
+        if(tick == 300)
             backButton.gameObject.SetActive(true);
         tick++;
     }

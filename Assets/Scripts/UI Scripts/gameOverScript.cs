@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,6 +34,8 @@ public class gameOverScript : MonoBehaviour
 
     public void mainMenu()
     {
+        SceneManager.UnloadSceneAsync("Hazards");
+        SceneManager.UnloadSceneAsync("Portals");
         MusicPlayer.playMusic("main music");
         UIHandler.isOnGame = false;
         SceneManager.UnloadSceneAsync("GameOver UI");

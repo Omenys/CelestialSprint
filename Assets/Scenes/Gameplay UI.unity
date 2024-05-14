@@ -1618,8 +1618,8 @@ MonoBehaviour:
   - {r: 1, g: 0.61960787, b: 0, a: 1}
   - {r: 0.9811321, g: 0.8596612, b: 0.66180134, a: 1}
   - {r: 0.83137256, g: 0.5294118, b: 0.03529412, a: 1}
-  lowFuelPercentageNum: 20
-  criticalFuelPercentageNum: 10
+  lowFuelPercentageNum: 30
+  criticalFuelPercentageNum: 15
   blinkingInterval: 0.275
   shakingPower: 1.25
   criticalShakingPower: 2.5

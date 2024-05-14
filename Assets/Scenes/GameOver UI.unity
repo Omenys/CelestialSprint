@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e33bea6d74e9224f808a8d1c45b3894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alphaGain: 0.00425
+  alphaGain: 0.0085
   gameOverText: {fileID: 300952840}
   gameOverTextColor: {r: 0.83921576, g: 0, b: 0, a: 0}
   backButton: {fileID: 173638883}

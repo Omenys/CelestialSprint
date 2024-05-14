@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class progressScript : MonoBehaviour
 {
@@ -16,12 +13,6 @@ public class progressScript : MonoBehaviour
     int tick = 0;
     int tick_two = 0;
     float alpha = 1.0f;
-
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -41,6 +32,7 @@ public class progressScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Victory UI", LoadSceneMode.Additive);
     }
+
     private void FixedUpdate() // Updates 50 times per second
     {
         if(hasWon)
@@ -66,5 +58,10 @@ public class progressScript : MonoBehaviour
     public void portalCollision()
     {
         progressBar.fillAmount += 0.1f;
+    }
+
+    public void greenPortalCollision()
+    {
+        progressBar.fillAmount += 0.2f;
     }
 }

@@ -44,6 +44,8 @@ public class ShieldChargeIcon : MonoBehaviour
 
         //I am sorry for inefficient code T_T
 
+        // Noooo don't be sad :( you nailed it at the end below this comment
+
         if (stat.currentShieldCount == 2)
         {
             shieldIcons[2].SetActive(false);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -98,6 +99,11 @@ public class Portal : MonoBehaviour
 
         transform.position += Vector3.left * portalSpeed * Time.deltaTime;
 
+        if(SceneManager.GetSceneByName("GameOver UI").isLoaded)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -136,14 +142,13 @@ public class Portal : MonoBehaviour
 
             if (render.sprite == greenPortal)
             {
-                bar.portalCollision();
+                bar.greenPortalCollision();
                 Debug.Log("Green Portal Entered");
                 portalsEntered += 2;
                 playRandomTeleportSFX();
                 spawner.setSpawnDelay(4.5f);
                 asteroid.setMaxSpeed(250);
             }
-            //Debug.Log(portalsEntered);
         }
 
     }

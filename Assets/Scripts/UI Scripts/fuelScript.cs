@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
 public class fuelScript : MonoBehaviour
 {
@@ -129,7 +125,7 @@ public class fuelScript : MonoBehaviour
             }
         }
     }
-
+    
     private void FixedUpdate() // Updates 50 times per second
     {
         if (hasWon)

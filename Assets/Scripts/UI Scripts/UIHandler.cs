@@ -18,12 +18,6 @@ public class UIHandler : MonoBehaviour
     public static bool isOnRules = false;
     public static bool playMainMusicOnLoop = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
